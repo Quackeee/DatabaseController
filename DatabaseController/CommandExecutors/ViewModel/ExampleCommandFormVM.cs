@@ -14,9 +14,5 @@ namespace DatabaseController.CommandExecutor.ViewModel
             throw new NotImplementedException();
         }
         public override bool CanExecuteCommand() => true;
-        public ExampleCommandExecutorVM()
-        {
-            Debug.WriteLine("Constructor run");
-        }
     }
 }

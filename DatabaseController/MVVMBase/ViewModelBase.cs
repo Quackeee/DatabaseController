@@ -10,7 +10,6 @@ using System.Windows.Input;
 
 namespace MVVMBase
 {
-
     class ViewModelBase : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;

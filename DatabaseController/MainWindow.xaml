@@ -10,15 +10,42 @@
         xmlns:vm="clr-namespace:DatabaseController.ViewModel"
         xmlns:db="clr-namespace:DatabaseController.View.DialogBoxes"
         xmlns:resx="clr-namespace:DatabaseController.Properties"
+        xmlns:v="clr-namespace:DatabaseController.View.LogIn"
         
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-
+        Title="RoasterDB" Height="400" Width="800" ResizeMode="CanMinimize">
+    
+    
     <Window.Resources>
         <vm:MainWindowVM x:Key="MainVM"/>
     </Window.Resources>
 
     <Grid DataContext="{StaticResource MainVM}">
-        <Button Content="Otwórz przykładowe okienko wywoływania komendy" Command="{Binding ShowExampleCommandExecutor}" Height="25" Width="400"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0.5*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <v:ViewLogIn x:Name="loginPanel" Login="{Binding LoginPanel.CurrentLogin, Mode=TwoWay}" 
+                     Password="{Binding LoginPanel.CurrentPassword, Mode=TwoWay}"
+                     LoginCommand="{Binding LoginPanel.LoginCommand}"/>
+
+        <DataGrid Grid.Column="1" Grid.RowSpan="2">
+
+        </DataGrid>
+        
+        <StackPanel Grid.Column="2" Grid.RowSpan="2" Background="AliceBlue">
+            <Button Content="{Binding Source={x:Static resx:Resources.command1}}" Command="{Binding ShowExampleCommandExecutor}" Margin="20"/>
+            <Button Content="{Binding Source={x:Static resx:Resources.command2}}" Command="{Binding ShowExampleCommandExecutor}" Margin="20"/>
+            <Button Content="{Binding Source={x:Static resx:Resources.command3}}" Command="{Binding ShowExampleCommandExecutor}" Margin="20"/>
+            <Button Content="{Binding Source={x:Static resx:Resources.command4}}" Command="{Binding ShowExampleCommandExecutor}" Margin="20"/>
+            <Button Content="{Binding Source={x:Static resx:Resources.command5}}" Command="{Binding ShowExampleCommandExecutor}" Margin="20"/>
+            <Button Content="{Binding Source={x:Static resx:Resources.command6}}" Command="{Binding ShowExampleCommandExecutor}" Margin="20"/>
+        </StackPanel>
     </Grid>
 </Window>

@@ -12,6 +12,13 @@ namespace DatabaseController.ViewModel
 {
     class MainWindowVM : MVVMBase.ViewModelBase
     {
+        private LogInVM loginPanel;
+
+        public MainWindowVM()
+        {
+            loginPanel = new LogInVM();
+        }
+        
         public DisplayCECommand ShowExampleCommandExecutor
         {
             get
@@ -20,6 +27,12 @@ namespace DatabaseController.ViewModel
                     arg => new ExampleCommandExecutorVM()
                     );
             }
+        }
+
+        public LogInVM LoginPanel
+        {
+            get => loginPanel;
+            set { loginPanel = value; OnPropertyChanged(nameof(LoginPanel)); }
         }
     }
 }

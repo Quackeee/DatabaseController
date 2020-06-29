@@ -118,30 +118,30 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="command1" xml:space="preserve">
-    <value>Example 1</value>
+    <value>Przyklad 1</value>
   </data>
   <data name="command2" xml:space="preserve">
-    <value>Example 2</value>
+    <value>Przyklad 2</value>
   </data>
   <data name="command3" xml:space="preserve">
-    <value>Example 3</value>
+    <value>Przyklad 3</value>
   </data>
   <data name="command4" xml:space="preserve">
-    <value>Example 4</value>
+    <value>Przyklad 4</value>
   </data>
   <data name="command5" xml:space="preserve">
-    <value>Example 5</value>
+    <value>Przyklad 5</value>
   </data>
   <data name="command6" xml:space="preserve">
-    <value>Example 6</value>
+    <value>Przyklad 6</value>
   </data>
   <data name="LoginButton" xml:space="preserve">
-    <value>Log In</value>
+    <value>Zaloguj</value>
   </data>
   <data name="LoginLabel" xml:space="preserve">
     <value>Login</value>
   </data>
   <data name="PasswordLabel" xml:space="preserve">
-    <value>Password</value>
+    <value>Hasło</value>
   </data>
 </root>

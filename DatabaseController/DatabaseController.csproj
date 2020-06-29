@@ -69,6 +69,12 @@
     </Compile>
     <Compile Include="Model\Model.cs" />
     <Compile Include="MVVMBase\ViewModelBase.cs" />
+    <Compile Include="Properties\Resources.pl-PL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.pl-PL.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\LogInVM.cs" />
     <Compile Include="ViewModel\MainWindowVM.cs" />
     <Compile Include="CommandExecutors\Base\CommandExecutorWindowVM.cs" />
     <Compile Include="CommandExecutors\Base\CommandFormVM.cs" />
@@ -79,6 +85,9 @@
     <Compile Include="View\DialogBoxes\MessageDialogBox.cs" />
     <Compile Include="View\DialogBoxes\OpenFileDialogBox.cs" />
     <Compile Include="View\DialogBoxes\SaveFileDialogBox.cs" />
+    <Compile Include="View\LogIn\ViewLogIn.xaml.cs">
+      <DependentUpon>ViewLogIn.xaml</DependentUpon>
+    </Compile>
     <Page Include="CommandExecutors\Base\CommandExecutorWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -99,6 +108,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\LogIn\ViewLogIn.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -114,8 +127,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Properties\Resources.pl-PL.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.pl-PL.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
