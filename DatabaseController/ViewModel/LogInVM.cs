@@ -1,4 +1,5 @@
-﻿using MVVMBase;
+﻿using DatabaseController.Model;
+using MVVMBase;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -39,23 +40,17 @@ namespace DatabaseController.ViewModel
                     loginCommand = new RelayCommand(
                         arg =>
                         {
-                            loginToDatabase();
+                            
                         },
                         arg =>
                         {
-                            if (currentLogin != null && currentPassword != null)
-                                return true;
-                            return false;
+                            if (currentLogin == null || currentPassword == null)
+                                return false;
+                            return true;
                         });
                 }
-
                 return loginCommand;
             }
-        }
-
-        private void loginToDatabase()
-        {
-            Debug.WriteLine("GOWNO JEBANE W DUPEEEEE");
         }
     }
 }
