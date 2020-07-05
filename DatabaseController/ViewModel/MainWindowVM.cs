@@ -41,7 +41,6 @@ namespace DatabaseController.ViewModel
         public MainWindowVM()
         {
             loginPanel = new LogInVM();
-            dbModel = new DBModel();
         }
 
         public DisplayCECommand ShowExampleCommandExecutor
@@ -54,7 +53,6 @@ namespace DatabaseController.ViewModel
             }
         }
 
-
         private ICommand loginCommand;
         public ICommand LoginCommand
         {
@@ -65,9 +63,9 @@ namespace DatabaseController.ViewModel
                     loginCommand = new RelayCommand(
                         arg =>
                         {
-                            //DBConnection.LogIn(loginPanel.CurrentLogin, loginPanel.CurrentPassword);
-                            //dbModel = new DBModel();
-                            //dataGridVM = new DataGridVM(dbModel);
+                            DBConnection.LogIn(loginPanel.CurrentLogin, loginPanel.CurrentPassword);
+                            dbModel = new DBModel();
+                            OnPropertyChanged(nameof(dbModel));
                         },
                         arg =>
                         {

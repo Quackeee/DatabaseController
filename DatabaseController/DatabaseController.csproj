@@ -109,7 +109,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.pl-PL.resx</DependentUpon>
     </Compile>
-    <Compile Include="ViewModel\DataGridVM.cs" />
     <Compile Include="ViewModel\LogInVM.cs" />
     <Compile Include="ViewModel\MainWindowVM.cs" />
     <Compile Include="CommandExecutors\Base\CommandExecutorWindowVM.cs" />

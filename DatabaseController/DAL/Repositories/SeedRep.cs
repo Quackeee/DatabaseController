@@ -12,20 +12,23 @@ namespace DatabaseController.DAL.Repositories
     {
         private const string ALL_SEEDS = "SELECT * FROM ziarna";
 
-
         public static List<Seed> GetAllSeeds()
         {
             List<Seed> seeds = new List<Seed>();
-            using (var connection = DBConnection.Instance.Connection)
+            try
             {
-                MySqlCommand command = new MySqlCommand(ALL_SEEDS, connection);
+                using (var connection = DBConnection.Instance.Connection)
+                {
+                    MySqlCommand command = new MySqlCommand(ALL_SEEDS, connection);
 
-                connection.Open();
-                var reader = command.ExecuteReader();
-                while (reader.Read())
-                    seeds.Add(new Seed(reader));
-                connection.Close();
+                    connection.Open();
+                    var reader = command.ExecuteReader();
+                    while (reader.Read())
+                        seeds.Add(new Seed(reader));
+                    connection.Close();
+                }
             }
+            catch(Exception e) { }
 
             return seeds;
         }

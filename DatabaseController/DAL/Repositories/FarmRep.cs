@@ -16,16 +16,21 @@ namespace DatabaseController.DAL.Repositories
         public static List<Farm> GetAllFarms()
         {
             List<Farm> farms = new List<Farm>();
-            using (var connection = DBConnection.Instance.Connection)
+            try
             {
-                MySqlCommand command = new MySqlCommand(ALL_FARMS, connection);
-                
-                connection.Open();
-                var reader = command.ExecuteReader();
-                while (reader.Read())
-                    farms.Add(new Farm(reader));
-                connection.Close();
+                using (var connection = DBConnection.Instance.Connection)
+                {
+                    MySqlCommand command = new MySqlCommand(ALL_FARMS, connection);
+
+                    connection.Open();
+                    var reader = command.ExecuteReader();
+                    while (reader.Read())
+                        farms.Add(new Farm(reader));
+                    connection.Close();
+                }
             }
+            catch(Exception e) { }
+            
 
             return farms;
         }

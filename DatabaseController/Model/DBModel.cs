@@ -22,33 +22,36 @@ namespace DatabaseController.DAL
 
         public DBModel()
         {
-            //var burnings = BurningRep.GetAllBurnings();
-            //foreach (var x in burnings)
-                //Burnings.Add(x);
-            
-            var crops = CropRep.GetAllCrops();
-            foreach (var x in crops)
-                Crops.Add(x);
+            if(DBConnection.UserID == "root")
+            {
+                var burnings = BurningRep.GetAllBurnings();
+                foreach (var x in burnings)
+                    Burnings.Add(x);
 
-            var farms = FarmRep.GetAllFarms();
-            foreach (var x in farms)
-                Farms.Add(x);
+                var crops = CropRep.GetAllCrops();
+                foreach (var x in crops)
+                    Crops.Add(x);
 
-            var packages = PackageRep.GetAllPackages();
-            foreach (var x in packages)
-                Packages.Add(x);
+                var farms = FarmRep.GetAllFarms();
+                foreach (var x in farms)
+                    Farms.Add(x);
 
-            var roasteds = RoastedRep.GetAllRoasted();
-            foreach (var x in roasteds)
-                Roasteds.Add(x);
+                var packages = PackageRep.GetAllPackages();
+                foreach (var x in packages)
+                    Packages.Add(x);
 
-            var roastingRooms = RoastingRoomRep.GetAllRoastingRooms();
-            foreach (var x in roastingRooms)
-                RoastingRooms.Add(x);
+                var roasteds = RoastedRep.GetAllRoasted();
+                foreach (var x in roasteds)
+                    Roasteds.Add(x);
 
-            var seeds = SeedRep.GetAllSeeds();
-            foreach (var x in seeds)
-                Seeds.Add(x);
+                var roastingRooms = RoastingRoomRep.GetAllRoastingRooms();
+                foreach (var x in roastingRooms)
+                    RoastingRooms.Add(x);
+
+                var seeds = SeedRep.GetAllSeeds();
+                foreach (var x in seeds)
+                    Seeds.Add(x);
+            }     
         }
     }
 }

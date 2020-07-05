@@ -12,20 +12,23 @@ namespace DatabaseController.DAL.Repositories
     {
         private const string ALL_PACKAGES = "SELECT * FROM paczka";
 
-
         public static List<Package> GetAllPackages()
         {
             List<Package> packages = new List<Package>();
-            using (var connection = DBConnection.Instance.Connection)
+            try
             {
-                MySqlCommand command = new MySqlCommand(ALL_PACKAGES, connection);
+                using (var connection = DBConnection.Instance.Connection)
+                {
+                    MySqlCommand command = new MySqlCommand(ALL_PACKAGES, connection);
 
-                connection.Open();
-                var reader = command.ExecuteReader();
-                while (reader.Read())
-                    packages.Add(new Package(reader));
-                connection.Close();
+                    connection.Open();
+                    var reader = command.ExecuteReader();
+                    while (reader.Read())
+                        packages.Add(new Package(reader));
+                    connection.Close();
+                }
             }
+            catch(Exception e) { }
 
             return packages;
         }
