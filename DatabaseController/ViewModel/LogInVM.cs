@@ -15,7 +15,6 @@ namespace DatabaseController.ViewModel
     {
         private string currentLogin;
         private string currentPassword;
-        private ICommand loginCommand = null;
 
         public LogInVM() { }
 
@@ -29,28 +28,6 @@ namespace DatabaseController.ViewModel
         {
             get => currentPassword;
             set { currentPassword = value; OnPropertyChanged(nameof(CurrentPassword)); }
-        }
-
-        public ICommand LoginCommand
-        {
-            get
-            {
-                if (loginCommand == null)
-                {
-                    loginCommand = new RelayCommand(
-                        arg =>
-                        {
-                            
-                        },
-                        arg =>
-                        {
-                            if (currentLogin == null || currentPassword == null)
-                                return false;
-                            return true;
-                        });
-                }
-                return loginCommand;
-            }
         }
     }
 }

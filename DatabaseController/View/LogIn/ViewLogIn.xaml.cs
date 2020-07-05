@@ -33,10 +33,6 @@ namespace DatabaseController.View.LogIn
             DependencyProperty.Register("Password", typeof(string), typeof(ViewLogIn),
                 new FrameworkPropertyMetadata(null));
 
-        private static readonly DependencyProperty LoginCommandProperty =
-            DependencyProperty.Register("LoginCommand", typeof(ICommand), typeof(ViewLogIn),
-                new FrameworkPropertyMetadata(null));
-
         public string Login
         {
             get => (string)GetValue(LoginProperty);
@@ -47,12 +43,6 @@ namespace DatabaseController.View.LogIn
         {
             get => (string)GetValue(PasswordProperty);
             set => SetValue(PasswordProperty, value);
-        }
-
-        public ICommand LoginCommand
-        {
-            get => (ICommand)GetValue(LoginCommandProperty);
-            set => SetValue(LoginCommandProperty, value);
         }
     }
 }

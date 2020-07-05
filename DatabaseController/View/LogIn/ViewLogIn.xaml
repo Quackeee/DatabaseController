@@ -18,7 +18,6 @@
             <Label Content="{Binding Source={x:Static resx:Resources.PasswordLabel}}" Margin="16,10,20,0"/>
             <TextBox Text="{Binding Password, ElementName=View}" Margin="20,0,20,0"/>
 
-            <Button Content="{Binding Source={x:Static resx:Resources.LoginButton}}" Command="{Binding LoginCommand, ElementName=View}" Margin="20" Height="29"/>
         </StackPanel>
     </Grid>
 </UserControl>

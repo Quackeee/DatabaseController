@@ -21,6 +21,10 @@ namespace DatabaseController.Model
             this.region = region;
         }
 
+        public override string ToString()
+        {
+            return ($"{name}, {owner}, {country}, {region}\n");
+        }
         public string Name { get => name; }
         public string Owner { get => owner; }
         public string Coutry { get => country; }

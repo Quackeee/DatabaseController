@@ -32,13 +32,13 @@
         </Grid.RowDefinitions>
 
         <v:ViewLogIn x:Name="loginPanel" Login="{Binding LoginPanel.CurrentLogin, Mode=TwoWay}" 
-                     Password="{Binding LoginPanel.CurrentPassword, Mode=TwoWay}"
-                     LoginCommand="{Binding LoginPanel.LoginCommand}" Grid.RowSpan="2"/>
+                     Password="{Binding LoginPanel.CurrentPassword, Mode=TwoWay}" Grid.RowSpan="2"/>
 
-        <DataGrid Grid.Column="1" Grid.RowSpan="2">
+        <Button Content="{Binding Source={x:Static resx:Resources.LoginButton}}" HorizontalAlignment="Center" VerticalAlignment="Bottom" 
+                Margin="20" Width="100" Height="30" Command="{Binding LoginCommand}"/>
 
-        </DataGrid>
-        
+        <DataGrid Grid.Column="1" Grid.RowSpan="2" AutoGenerateColumns="True" x:Name="dataGrid"/>
+
         <StackPanel Grid.Column="2" Grid.RowSpan="2" Background="AliceBlue">
             <Button Content="{Binding Source={x:Static resx:Resources.command1}}" Command="{Binding ShowExampleCommandExecutor}" Margin="20"/>
             <Button Content="{Binding Source={x:Static resx:Resources.command2}}" Command="{Binding ShowExampleCommandExecutor}" Margin="20"/>
