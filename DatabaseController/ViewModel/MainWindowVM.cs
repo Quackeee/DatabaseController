@@ -31,13 +31,6 @@ namespace DatabaseController.ViewModel
             set { dbModel = value;OnPropertyChanged(nameof(DbModel)); }
         }
 
-        private DataGridVM dataGridVM;
-        public DataGridVM DataGridVM
-        {
-            get => dataGridVM;
-            set { dataGridVM = value; OnPropertyChanged(nameof(DataGridVM)); }
-        }
-
         private LogInVM loginPanel;
         public LogInVM LoginPanel
         {
@@ -49,10 +42,7 @@ namespace DatabaseController.ViewModel
         {
             loginPanel = new LogInVM();
             dbModel = new DBModel();
-            dataGridVM = new DataGridVM(dbModel);
         }
-
-       
 
         public DisplayCECommand ShowExampleCommandExecutor
         {
