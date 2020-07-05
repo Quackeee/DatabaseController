@@ -18,26 +18,41 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using Resx = DatabaseController.Properties.Resources;
 using System.Diagnostics;
+using System.Windows.Navigation;
 
 namespace DatabaseController.ViewModel
 {
     class MainWindowVM : MVVMBase.ViewModelBase
     {
         private DBModel dbModel;
-        private LogInVM loginPanel;
-
-        private ICommand loginCommand;
-
-        public MainWindowVM()
+        public DBModel DbModel
         {
-            loginPanel = new LogInVM();
+            get => dbModel;
+            set { dbModel = value;OnPropertyChanged(nameof(DbModel)); }
         }
-        
+
+        private DataGridVM dataGridVM;
+        public DataGridVM DataGridVM
+        {
+            get => dataGridVM;
+            set { dataGridVM = value; OnPropertyChanged(nameof(DataGridVM)); }
+        }
+
+        private LogInVM loginPanel;
         public LogInVM LoginPanel
         {
             get => loginPanel;
             set { loginPanel = value; OnPropertyChanged(nameof(LoginPanel)); }
         }
+
+        public MainWindowVM()
+        {
+            loginPanel = new LogInVM();
+            dbModel = new DBModel();
+            dataGridVM = new DataGridVM(dbModel);
+        }
+
+       
 
         public DisplayCECommand ShowExampleCommandExecutor
         {
@@ -49,6 +64,8 @@ namespace DatabaseController.ViewModel
             }
         }
 
+
+        private ICommand loginCommand;
         public ICommand LoginCommand
         {
             get
@@ -58,12 +75,9 @@ namespace DatabaseController.ViewModel
                     loginCommand = new RelayCommand(
                         arg =>
                         {
-                            DBConnection.LogIn(loginPanel.CurrentLogin, loginPanel.CurrentPassword);
-                            dbModel = new DBModel();
-
-
-                            foreach (var x in dbModel.Roasteds)
-                                Debug.WriteLine(x);
+                            //DBConnection.LogIn(loginPanel.CurrentLogin, loginPanel.CurrentPassword);
+                            //dbModel = new DBModel();
+                            //dataGridVM = new DataGridVM(dbModel);
                         },
                         arg =>
                         {
@@ -76,6 +90,24 @@ namespace DatabaseController.ViewModel
             }
         }
 
+        private ICommand testCommand;
+        public ICommand TestCommand
+        {
+            get
+            {
+                if(testCommand == null)
+                {
+                    testCommand = new RelayCommand(
+                        arg =>
+                        {
+                            foreach (var x in dbModel.Farms)
+                                Debug.WriteLine(x);
+                        },
+                        arg => { return true; });
+                }
+                return testCommand;
+            }
+        }
 
     }
 }

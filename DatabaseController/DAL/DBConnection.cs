@@ -30,8 +30,8 @@ namespace DatabaseController.DAL
 
         private DBConnection()
         {
-            stringBuilder.UserID = UserID;
-            stringBuilder.Password = Password;
+            stringBuilder.UserID = "root";
+            stringBuilder.Password = "Zaq12wsx";
             stringBuilder.Server = "localhost";
             stringBuilder.Database = "roaster";
             stringBuilder.Port = 3306;

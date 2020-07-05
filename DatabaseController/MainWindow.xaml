@@ -11,9 +11,10 @@
         xmlns:db="clr-namespace:DatabaseController.View.DialogBoxes"
         xmlns:resx="clr-namespace:DatabaseController.Properties"
         xmlns:v="clr-namespace:DatabaseController.View.LogIn"
+        xmlns:m="clr-namespace:DatabaseController.DAL"
         
         mc:Ignorable="d"
-        Title="RoasterDB" Height="400" Width="800" ResizeMode="CanMinimize">
+        Title="RoasterDB" Height="600" Width="1000" ResizeMode="CanMinimize">
     
     
     <Window.Resources>
@@ -22,9 +23,9 @@
 
     <Grid DataContext="{StaticResource MainVM}">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="0.3*"/>
             <ColumnDefinition/>
-            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="0.3*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -37,12 +38,34 @@
         <Button Content="{Binding Source={x:Static resx:Resources.LoginButton}}" HorizontalAlignment="Center" VerticalAlignment="Bottom" 
                 Margin="20" Width="100" Height="30" Command="{Binding LoginCommand}"/>
 
-        <DataGrid Grid.Column="1" Grid.RowSpan="2" AutoGenerateColumns="True" x:Name="dataGrid" ItemsSource="{Binding list}"/>
-
+        <TabControl Grid.Column="1" Grid.RowSpan="2">
+            <TabItem x:Name="burningTabItem" Header="Palenie">
+                <DataGrid ItemsSource="{Binding DbModel.Burnings}" AutoGenerateColumns="True"/>
+            </TabItem>
+            <TabItem x:Name="cropTabItem" Header="Zbior">
+                <DataGrid ItemsSource="{Binding DbModel.Crops}" AutoGenerateColumns="True"/>
+            </TabItem>
+            <TabItem x:Name="farmTabItem" Header="Farma">
+                <DataGrid ItemsSource="{Binding DbModel.Farms}" AutoGenerateColumns="True"/>
+            </TabItem>
+            <TabItem x:Name="packageTabItem" Header="Paczka">
+                <DataGrid ItemsSource="{Binding DbModel.Packages}" AutoGenerateColumns="True"/>
+            </TabItem>
+            <TabItem x:Name="roastedTabItem" Header="Wypalone">
+                <DataGrid ItemsSource="{Binding DbModel.Roasteds}" AutoGenerateColumns="True"/>
+            </TabItem>
+            <TabItem x:Name="roastingRoomTabItem" Header="Palarnia">
+                <DataGrid ItemsSource="{Binding DbModel.RoastingRooms}" AutoGenerateColumns="True"/>
+            </TabItem>
+            <TabItem x:Name="seedTabItem" Header="Ziarna">
+                <DataGrid ItemsSource="{Binding DbModel.Seeds}" AutoGenerateColumns="True"/>
+            </TabItem>
+        </TabControl>
+       
         <StackPanel Grid.Column="2" Grid.RowSpan="2" Background="AliceBlue">
             <Button Content="{Binding Source={x:Static resx:Resources.command1}}" Command="{Binding ShowExampleCommandExecutor}" Margin="20"/>
             <Button Content="{Binding Source={x:Static resx:Resources.command2}}" Command="{Binding ShowExampleCommandExecutor}" Margin="20"/>
-            <Button Content="{Binding Source={x:Static resx:Resources.command3}}" Command="{Binding ShowExampleCommandExecutor}" Margin="20"/>
+            <Button Content="{Binding Source={x:Static resx:Resources.command3}}" Command="{Binding TestCommand}" Margin="20"/>
             <Button Content="{Binding Source={x:Static resx:Resources.command4}}" Command="{Binding ShowExampleCommandExecutor}" Margin="20"/>
             <Button Content="{Binding Source={x:Static resx:Resources.command5}}" Command="{Binding ShowExampleCommandExecutor}" Margin="20"/>
             <Button Content="{Binding Source={x:Static resx:Resources.command6}}" Command="{Binding ShowExampleCommandExecutor}" Margin="20"/>
