@@ -37,7 +37,7 @@
         <Button Content="{Binding Source={x:Static resx:Resources.LoginButton}}" HorizontalAlignment="Center" VerticalAlignment="Bottom" 
                 Margin="20" Width="100" Height="30" Command="{Binding LoginCommand}"/>
 
-        <DataGrid Grid.Column="1" Grid.RowSpan="2" AutoGenerateColumns="True" x:Name="dataGrid"/>
+        <DataGrid Grid.Column="1" Grid.RowSpan="2" AutoGenerateColumns="True" x:Name="dataGrid" ItemsSource="{Binding list}"/>
 
         <StackPanel Grid.Column="2" Grid.RowSpan="2" Background="AliceBlue">
             <Button Content="{Binding Source={x:Static resx:Resources.command1}}" Command="{Binding ShowExampleCommandExecutor}" Margin="20"/>
