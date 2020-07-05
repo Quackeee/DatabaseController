@@ -1,6 +1,7 @@
 ﻿using DatabaseController.CommandExecutor.ViewModel;
-using DatabaseController.Model;
+using DatabaseController.DAL;
 using MVVMBase;
+using DatabaseController.Model;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -16,14 +17,14 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using Resx = DatabaseController.Properties.Resources;
-
+using System.Diagnostics;
 
 namespace DatabaseController.ViewModel
 {
     class MainWindowVM : MVVMBase.ViewModelBase
     {
+        private DBModel dbModel;
         private LogInVM loginPanel;
-        private SQLDatabase database;
 
         private ICommand loginCommand;
 
@@ -57,7 +58,12 @@ namespace DatabaseController.ViewModel
                     loginCommand = new RelayCommand(
                         arg =>
                         {
-                            database = new SQLDatabase(LoginPanel.CurrentLogin, LoginPanel.CurrentPassword);                            
+                            DBConnection.LogIn(loginPanel.CurrentLogin, loginPanel.CurrentPassword);
+                            dbModel = new DBModel();
+
+
+                            foreach (var x in dbModel.Roasteds)
+                                Debug.WriteLine(x);
                         },
                         arg =>
                         {

@@ -23,7 +23,7 @@ namespace DatabaseController.DAL.Repositories
                 connection.Open();
                 var reader = command.ExecuteReader();
                 while (reader.Read())
-                    farms.Add(new Crop(reader));
+                    crops.Add(new Crop(reader));
                 connection.Close();
             }
 

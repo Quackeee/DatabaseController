@@ -14,7 +14,7 @@ namespace DatabaseController.Model
         public uint IdR { get; private set; }
         public double Weight { get; private set; }
         public string Method { get; private set; }
-        public bool Speciality { get; private set; }
+        public string Speciality { get; private set; }
         public float Score { get; private set; }
         public string Cons { get; private set; }
         public string Body { get; private set; }
@@ -26,12 +26,17 @@ namespace DatabaseController.Model
             IdR = uint.Parse(dataReader["id_r"].ToString());
             Weight = double.Parse(dataReader["waga"].ToString());
             Method = dataReader["zalecana_metoda"].ToString();
-            Speciality = bool.Parse(dataReader["jest_speciality"].ToString());
+            Speciality = dataReader["jest_speciality"].ToString();
             Score = float.Parse(dataReader["punktacja"].ToString());
             Cons = dataReader["wady"].ToString();
             Body = dataReader["body"].ToString();
             Acidity = dataReader["kwasowosc"].ToString();
             Sweetness = dataReader["slodycz"].ToString();
+        }
+
+        public override string ToString()
+        {
+            return ($"{IdR}, {Weight}, {Speciality}, {Cons}");
         }
     }
 }

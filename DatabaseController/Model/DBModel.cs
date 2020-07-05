@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace DatabaseController.DAL
 {
-    class Model
+    class DBModel
     {
         public ObservableCollection<Burning> Burnings { get; set; } = new ObservableCollection<Burning>();
         public ObservableCollection<Crop> Crops { get; set; } = new ObservableCollection<Crop>();
@@ -20,7 +20,7 @@ namespace DatabaseController.DAL
         public ObservableCollection<RoastingRoom> RoastingRooms { get; set; } = new ObservableCollection<RoastingRoom>();
         public ObservableCollection<Seed> Seeds { get; set; } = new ObservableCollection<Seed>();
 
-        public Model()
+        public DBModel()
         {
             //var burnings = BurningRep.GetAllBurnings();
             //foreach (var x in burnings)

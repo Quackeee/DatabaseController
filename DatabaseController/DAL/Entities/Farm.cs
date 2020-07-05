@@ -21,5 +21,10 @@ namespace DatabaseController.Model
             Country = dataReader["kraj"].ToString();
             Region = dataReader["region"].ToString();
         }
+
+        public override string ToString()
+        {
+            return ($"{Name}, {Owner}, {Country}, {Region}");
+        }
     }
 }

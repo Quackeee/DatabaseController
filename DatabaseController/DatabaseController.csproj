@@ -87,12 +87,22 @@
     <Compile Include="CommandExecutors\View\ExampleCommandExecutorView.xaml.cs">
       <DependentUpon>ExampleCommandExecutorView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Model\Farm.cs" />
-    <Compile Include="Model\Package.cs" />
-    <Compile Include="Model\Roasted.cs" />
-    <Compile Include="Model\RoastingRoom.cs" />
-    <Compile Include="Model\Seed.cs" />
-    <Compile Include="Model\SQLDatabase.cs" />
+    <Compile Include="DAL\DBConnection.cs" />
+    <Compile Include="DAL\Entities\Burning.cs" />
+    <Compile Include="DAL\Entities\Crop.cs" />
+    <Compile Include="DAL\Entities\Farm.cs" />
+    <Compile Include="DAL\Entities\Package.cs" />
+    <Compile Include="DAL\Entities\Roasted.cs" />
+    <Compile Include="DAL\Entities\RoastingRoom.cs" />
+    <Compile Include="DAL\Entities\Seed.cs" />
+    <Compile Include="Model\DBModel.cs" />
+    <Compile Include="DAL\Repositories\BurningRep.cs" />
+    <Compile Include="DAL\Repositories\CropRep.cs" />
+    <Compile Include="DAL\Repositories\FarmRep.cs" />
+    <Compile Include="DAL\Repositories\PackageRep.cs" />
+    <Compile Include="DAL\Repositories\RoastedRep.cs" />
+    <Compile Include="DAL\Repositories\RoastingRoomRep.cs" />
+    <Compile Include="DAL\Repositories\SeedRep.cs" />
     <Compile Include="MVVMBase\ViewModelBase.cs" />
     <Compile Include="Properties\Resources.pl-PL.Designer.cs">
       <AutoGen>True</AutoGen>
