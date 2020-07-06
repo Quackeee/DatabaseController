@@ -16,7 +16,7 @@
             <TextBox Text="{Binding Login, ElementName=View}" Margin="20,0,20,0" Height="20"/>
 
             <Label Content="{Binding Source={x:Static resx:Resources.PasswordLabel}}" Margin="16,10,20,0" FontFamily="Charlesworth" FontSize="14"/>
-            <TextBox Text="{Binding Password, ElementName=View}" Margin="20,0,20,0" FontFamily="Resorces/password" Height="20" />
+            <TextBox Text="{Binding Password, ElementName=View}" Margin="20,0,20,0" FontFamily="password" Height="20" />
 
         </StackPanel>
     </Grid>

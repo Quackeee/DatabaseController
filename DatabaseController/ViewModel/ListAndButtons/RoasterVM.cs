@@ -1,4 +1,6 @@
 ﻿using DatabaseController.CommandExecutors.ViewModel;
+using DatabaseController.DAL;
+using DatabaseController.Model;
 using MVVMBase;
 using System;
 using System.Collections.Generic;
@@ -37,5 +39,6 @@ namespace DatabaseController.ViewModel
                     );
             }
         }
+        public RoasterVM() => DbModel = new RoasterDBModel();
     }
 }
