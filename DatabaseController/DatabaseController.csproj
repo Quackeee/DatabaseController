@@ -212,7 +212,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DAL\Entities\Roaster\" />
-    <Folder Include="DAL\Repositories\Roaster\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
