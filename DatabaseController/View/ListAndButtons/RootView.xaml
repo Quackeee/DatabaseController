@@ -39,6 +39,9 @@
         </TabControl>
 
         <StackPanel Grid.Column="1" Grid.RowSpan="2">
+            <Label Content="Komenda:"/>
+            <TextBox Text="{Binding CommandString}"/>
+            <Button Content="Execute" Command="{Binding Execute}" Width="130"/>
         </StackPanel>
     </Grid>
 </UserControl>
