@@ -123,6 +123,9 @@
   <data name="bodyLabel" xml:space="preserve">
     <value>Body</value>
   </data>
+  <data name="burningLabel" xml:space="preserve">
+    <value>Palenie</value>
+  </data>
   <data name="cancelButton" xml:space="preserve">
     <value>Anuluj</value>
   </data>
@@ -135,11 +138,20 @@
   <data name="command3" xml:space="preserve">
     <value>Sprzedaj</value>
   </data>
+  <data name="commandLabel" xml:space="preserve">
+    <value>Komenda</value>
+  </data>
   <data name="consLabel" xml:space="preserve">
     <value>Wady</value>
   </data>
+  <data name="cropLabel" xml:space="preserve">
+    <value>Zbiór</value>
+  </data>
   <data name="executeButton" xml:space="preserve">
     <value>Wykonaj</value>
+  </data>
+  <data name="farmLabel" xml:space="preserve">
+    <value>Farma</value>
   </data>
   <data name="howmanyinpackageLabel" xml:space="preserve">
     <value>Ile w paczce</value>
@@ -168,14 +180,35 @@
   <data name="methodsLabel" xml:space="preserve">
     <value>Metoda/y</value>
   </data>
+  <data name="myPackagesLabel" xml:space="preserve">
+    <value>Moje paczki</value>
+  </data>
+  <data name="myRoastingRooms" xml:space="preserve">
+    <value>Moje palarnie</value>
+  </data>
+  <data name="mySeedsLabel" xml:space="preserve">
+    <value>Moje ziarna</value>
+  </data>
+  <data name="packageLabel" xml:space="preserve">
+    <value>Paczka</value>
+  </data>
   <data name="PasswordLabel" xml:space="preserve">
     <value>Hasło</value>
   </data>
   <data name="priceLabel" xml:space="preserve">
     <value>Cena</value>
   </data>
+  <data name="roastedLabel" xml:space="preserve">
+    <value>Wypalone</value>
+  </data>
+  <data name="roastingRoomLabel" xml:space="preserve">
+    <value>Palarnia</value>
+  </data>
   <data name="scoreLabel" xml:space="preserve">
     <value>Punktacja</value>
+  </data>
+  <data name="seedLabel" xml:space="preserve">
+    <value>Ziarna</value>
   </data>
   <data name="specialityLabel" xml:space="preserve">
     <value>Speciality</value>

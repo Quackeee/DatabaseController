@@ -47,14 +47,16 @@ namespace DatabaseController.DAL
 
         public static string GetUserRole()
         {
-            if (Instance.stringBuilder.UserID == "root") return "root";
             string role = string.Empty;
 
             using (var connection = Instance.Connection)
             {
+                connection.Open();
+
+                if (Instance.stringBuilder.UserID == "root") return "root";
                 MySqlCommand command = new MySqlCommand("select current_role()", connection);
 
-                connection.Open();
+                
                 var reader = command.ExecuteReader();
                 reader.Read();
                 role = reader.GetString(0).Trim('`', '%', '@');

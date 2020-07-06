@@ -51,7 +51,7 @@ namespace DatabaseController.CommandExecutors.ViewModel
             if (ForDrip) HandleSelectedMethodsEmpty("drip");
             if (ForAeropress) HandleSelectedMethodsEmpty("aeropress");
 
-            return $"call wypal({Which}, {HowMuch}, '{Method}', '{Level}, {HandleNull(selectedMethods)},'{speciality}', " +
+            return $"call wypal({Which}, {HowMuch}, '{Method}', '{Level}', {HandleNull(selectedMethods)},'{speciality}', " +
                 $"{points}, {HandleNull(Flaws)}, {HandleNull(Body)}, {HandleNull(Acidity)}, {HandleNull(Sweetness)})";
         }
         public override bool CanExecuteCommand() =>

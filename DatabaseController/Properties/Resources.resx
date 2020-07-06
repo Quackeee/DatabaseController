@@ -123,6 +123,9 @@
   <data name="bodyLabel" xml:space="preserve">
     <value>Body</value>
   </data>
+  <data name="burningLabel" xml:space="preserve">
+    <value>Burning</value>
+  </data>
   <data name="cancelButton" xml:space="preserve">
     <value>Cancel</value>
   </data>
@@ -135,11 +138,20 @@
   <data name="command3" xml:space="preserve">
     <value>Sell</value>
   </data>
+  <data name="commandLabel" xml:space="preserve">
+    <value>Command</value>
+  </data>
   <data name="consLabel" xml:space="preserve">
     <value>Cons</value>
   </data>
+  <data name="cropLabel" xml:space="preserve">
+    <value>Crop</value>
+  </data>
   <data name="executeButton" xml:space="preserve">
     <value>Execute</value>
+  </data>
+  <data name="farmLabel" xml:space="preserve">
+    <value>Farm</value>
   </data>
   <data name="howmanyinpackageLabel" xml:space="preserve">
     <value>How many in the package</value>
@@ -168,6 +180,18 @@
   <data name="methodsLabel" xml:space="preserve">
     <value>Methods</value>
   </data>
+  <data name="myPackagesLabel" xml:space="preserve">
+    <value>My Packages</value>
+  </data>
+  <data name="myRoastingRooms" xml:space="preserve">
+    <value>My Roasting Rooms</value>
+  </data>
+  <data name="mySeedsLabel" xml:space="preserve">
+    <value>My Seeds</value>
+  </data>
+  <data name="packageLabel" xml:space="preserve">
+    <value>Package</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="password" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\password.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -178,8 +202,17 @@
   <data name="priceLabel" xml:space="preserve">
     <value>Price</value>
   </data>
+  <data name="roastedLabel" xml:space="preserve">
+    <value>Roasted</value>
+  </data>
+  <data name="roastingRoomLabel" xml:space="preserve">
+    <value>Roasting Room</value>
+  </data>
   <data name="scoreLabel" xml:space="preserve">
     <value>Score</value>
+  </data>
+  <data name="seedLabel" xml:space="preserve">
+    <value>Seed</value>
   </data>
   <data name="specialityLabel" xml:space="preserve">
     <value>Speciality</value>

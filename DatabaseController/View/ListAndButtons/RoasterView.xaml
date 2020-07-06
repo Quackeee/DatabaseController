@@ -12,20 +12,27 @@
             <ColumnDefinition/>
             <ColumnDefinition Width="0.3*"/>
         </Grid.ColumnDefinitions>
-
-
+        
         <TabControl Grid.Column="0" Grid.RowSpan="2" Height="550" VerticalAlignment="Top">
-            <TabItem Header="Moje ziarna">
+            <TabItem Header="{Binding Source={x:Static resx:Resources.seedLabel}}">
+                <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Visible">
+                    <DataGrid ItemsSource="{Binding DbModel.Seeds}" AutoGenerateColumns="True"/>
+                </ScrollViewer>
+            </TabItem>
+
+            <TabItem Header="{Binding Source={x:Static resx:Resources.mySeedsLabel}}">
                 <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Visible">
                 <DataGrid ItemsSource="{Binding DbModel.MySeeds}" AutoGenerateColumns="True"/>
                 </ScrollViewer>
             </TabItem>
-            <TabItem Header="Moje paczki">
+
+            <TabItem Header="{Binding Source={x:Static resx:Resources.myPackagesLabel}}">
                 <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Visible">
                 <DataGrid ItemsSource="{Binding DbModel.MyPackages}" AutoGenerateColumns="True"/>
                 </ScrollViewer>
             </TabItem>
-                <TabItem Header="Palarnie">
+
+                <TabItem Header="{Binding Source={x:Static resx:Resources.myRoastingRooms}}">
                 <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Visible">
                     <DataGrid ItemsSource="{Binding DbModel.MyRoastingRooms}" AutoGenerateColumns="True"/>
                 </ScrollViewer>

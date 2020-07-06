@@ -14,7 +14,8 @@
             <RowDefinition/>
             <RowDefinition Height="0.3*"/>
         </Grid.RowDefinitions>
-        <StackPanel>
+        
+	<StackPanel>
             <TabControl Grid.Column="0" Grid.RowSpan="2" Height="400">
                 <TabItem x:Name="burningTabItem" Header="Palenie" Width="113">
                     <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Visible">
@@ -56,9 +57,9 @@
 
 
         <StackPanel Grid.Column="0" Grid.Row="2" Background="#FFDDCEB0">
-            <Label Content="Komenda:"/>
+            <Label Content="{Binding Source={x:Static resx:Resources.commandLabel}}"/>
             <TextBox Text="{Binding CommandString}" Width="500" Height="25" Margin="-200,0,0,0" />
-            <Button Content="Execute" Command="{Binding Execute}" Width="130" Margin="500,-23,0,0"/>
+            <Button Content="{Binding Source={x:Static resx:Resources.executeButton}}" Command="{Binding Execute}" Width="130" Margin="500,-23,0,0"/>
             <Label Content="{Binding OutputMessage}" Width="700"/>
         </StackPanel>
     </Grid>

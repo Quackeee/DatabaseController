@@ -79,6 +79,15 @@ namespace DatabaseController.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Burning.
+        /// </summary>
+        public static string burningLabel {
+            get {
+                return ResourceManager.GetString("burningLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
         public static string cancelButton {
@@ -115,6 +124,15 @@ namespace DatabaseController.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Command.
+        /// </summary>
+        public static string commandLabel {
+            get {
+                return ResourceManager.GetString("commandLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cons.
         /// </summary>
         public static string consLabel {
@@ -124,11 +142,29 @@ namespace DatabaseController.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Crop.
+        /// </summary>
+        public static string cropLabel {
+            get {
+                return ResourceManager.GetString("cropLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Execute.
         /// </summary>
         public static string executeButton {
             get {
                 return ResourceManager.GetString("executeButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Farm.
+        /// </summary>
+        public static string farmLabel {
+            get {
+                return ResourceManager.GetString("farmLabel", resourceCulture);
             }
         }
         
@@ -214,6 +250,42 @@ namespace DatabaseController.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to My Packages.
+        /// </summary>
+        public static string myPackagesLabel {
+            get {
+                return ResourceManager.GetString("myPackagesLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to My Roasting Rooms.
+        /// </summary>
+        public static string myRoastingRooms {
+            get {
+                return ResourceManager.GetString("myRoastingRooms", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to My Seeds.
+        /// </summary>
+        public static string mySeedsLabel {
+            get {
+                return ResourceManager.GetString("mySeedsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Package.
+        /// </summary>
+        public static string packageLabel {
+            get {
+                return ResourceManager.GetString("packageLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
         public static byte[] password {
@@ -242,11 +314,38 @@ namespace DatabaseController.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Roasted.
+        /// </summary>
+        public static string roastedLabel {
+            get {
+                return ResourceManager.GetString("roastedLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Roasting Room.
+        /// </summary>
+        public static string roastingRoomLabel {
+            get {
+                return ResourceManager.GetString("roastingRoomLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Score.
         /// </summary>
         public static string scoreLabel {
             get {
                 return ResourceManager.GetString("scoreLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Seed.
+        /// </summary>
+        public static string seedLabel {
+            get {
+                return ResourceManager.GetString("seedLabel", resourceCulture);
             }
         }
         
