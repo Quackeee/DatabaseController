@@ -40,13 +40,13 @@ namespace DatabaseController.DAL
 
         public static void LogIn(string userId, string password)
         {
-            UserID = userId;
-            Password = password;
+            Instance.stringBuilder.UserID = userId;
+            Instance.stringBuilder.Password = password;
         }
 
         public static string GetUserRole()
         {
-            if (UserID == "root") return "root";
+            if (Instance.stringBuilder.UserID == "root") return "root";
             string role = string.Empty;
 
             using (var connection = Instance.Connection)

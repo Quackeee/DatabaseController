@@ -22,7 +22,7 @@ using System.Windows.Navigation;
 
 namespace DatabaseController.ViewModel
 {
-    class MainWindowVM : MVVMBase.ViewModelBase
+    class MainWindowVM : ViewModelBase
     {
 
         private bool isLogged = false;
@@ -63,7 +63,10 @@ namespace DatabaseController.ViewModel
 
                             if (role == "root") SelectedLNBVM = new RootVM();
                             else if (role == "wlasciciel_palarni") SelectedLNBVM = new RoasterVM();
-                            else throw new NotImplementedException("Selected user's role not supported");
+                            else throw new NotImplementedException($"Selected user's role not supported: {role}");
+
+                            LoginPanel.CurrentLogin = null;
+                            LoginPanel.CurrentPassword = null;
                         },
                         arg =>
                         {
