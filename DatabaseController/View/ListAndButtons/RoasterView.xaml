@@ -14,13 +14,16 @@
         </Grid.ColumnDefinitions>
 
         <TabControl Grid.Column="0" Grid.RowSpan="2" >
-            <TabItem Header="Moje ziarna">
+            <TabItem Header="{Binding Source={x:Static resx:Resources.seedLabel}}">
+                <DataGrid ItemsSource="{Binding DbModel.Seeds}" AutoGenerateColumns="True"/>
+            </TabItem>
+            <TabItem Header="{Binding Source={x:Static resx:Resources.mySeedsLabel}}">
                 <DataGrid ItemsSource="{Binding DbModel.MySeeds}" AutoGenerateColumns="True"/>
             </TabItem>
-            <TabItem Header="Moje paczki">
+            <TabItem Header="{Binding Source={x:Static resx:Resources.myPackagesLabel}}">
                 <DataGrid ItemsSource="{Binding DbModel.MyPackages}" AutoGenerateColumns="True"/>
             </TabItem>
-            <TabItem Header="Palarnie">
+            <TabItem Header="{Binding Source={x:Static resx:Resources.myRoastingRooms}}">
                 <DataGrid ItemsSource="{Binding DbModel.MyRoastingRooms}" AutoGenerateColumns="True"/>
             </TabItem>
         </TabControl>

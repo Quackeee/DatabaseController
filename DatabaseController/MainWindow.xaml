@@ -14,7 +14,7 @@
         xmlns:m="clr-namespace:DatabaseController.DAL"
         
         mc:Ignorable="d"
-        Title="RoasterDB" Height="600" Width="1000" ResizeMode="CanMinimize">
+        Title="RoasterDB" Height="600" Width="1300" ResizeMode="CanMinimize">
     
     
     <Window.Resources>
