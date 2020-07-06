@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace DatabaseController.View.LogIn
+namespace DatabaseController.View
 {
     /// <summary>
     /// Interaction logic for ViewLogIn.xaml

@@ -46,9 +46,10 @@ namespace DatabaseController.DAL
 
         public static string GetUserRole()
         {
+            if (UserID == "root") return "root";
             string role = string.Empty;
 
-            using (var connection = DBConnection.Instance.Connection)
+            using (var connection = Instance.Connection)
             {
                 MySqlCommand command = new MySqlCommand("select current_role()", connection);
                 connection.Open();
