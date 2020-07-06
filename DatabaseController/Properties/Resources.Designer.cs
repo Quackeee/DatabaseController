@@ -133,6 +133,16 @@ namespace DatabaseController.Properties {
         }
         
         /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Byte[].
+        /// </summary>
+        public static byte[] password {
+            get {
+                object obj = ResourceManager.GetObject("password", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         /// Wyszukuje zlokalizowany ciąg podobny do ciągu Password.
         /// </summary>
         public static string PasswordLabel {

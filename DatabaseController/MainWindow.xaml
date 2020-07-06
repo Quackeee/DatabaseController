@@ -19,6 +19,26 @@
     
     <Window.Resources>
         <vm:MainWindowVM x:Key="MainVM"/>
+        <Style TargetType="TabItem">
+            <Setter Property="Width" Value="87"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontFamily" Value="Charlesworth"/>
+        </Style>
+
+        <Style TargetType="Button">
+            <Setter Property="Width" Value="140"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="FontFamily" Value="Charlesworth" />
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="DemiBold"/>
+            <Setter Property="Background" Value="#FFB6AFA0"/>
+            <Setter Property="BorderThickness" Value="2"/>
+        </Style>
+
+        <Style TargetType="DataGrid">
+            <Setter Property="ColumnWidth" Value="*"/>
+        </Style>
         <DataTemplate DataType="{x:Type vm:RoasterVM}">
             <v:RoasterView/>
         </DataTemplate>
@@ -40,7 +60,7 @@
         </Grid.RowDefinitions>
 
         <v:ViewLogIn x:Name="loginPanel" Login="{Binding LoginPanel.CurrentLogin, Mode=TwoWay}" 
-                     Password="{Binding LoginPanel.CurrentPassword, Mode=TwoWay}" Grid.RowSpan="2"/>
+                     Password="{Binding LoginPanel.CurrentPassword, Mode=TwoWay}" Grid.RowSpan="2" Background="#FFDDCEB0"/>
 
         <Button Content="{Binding Source={x:Static resx:Resources.LoginButton}}" HorizontalAlignment="Center" VerticalAlignment="Bottom" 
                 Margin="20" Width="100" Height="30" Command="{Binding LoginCommand}"/>

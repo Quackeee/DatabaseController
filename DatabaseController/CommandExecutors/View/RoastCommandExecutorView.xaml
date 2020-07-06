@@ -5,55 +5,53 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:DatabaseController.CommandExecutors.View"
              mc:Ignorable="d" 
-             d:DesignHeight="380" d:DesignWidth="300">
-    <StackPanel>
+             d:DesignHeight="400" d:DesignWidth="350">
+    <StackPanel Background="#FFDDCEB0">
         <StackPanel Orientation="Horizontal">
             <Label Content="Które?"/>
-            <TextBox Text="{Binding Which}" Width="100"/>
+            <TextBox Text="{Binding Which}"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
-            <Label Content="Ile?"/>
-            <TextBox Text="{Binding HowMuch}" Width="100"/>
+            <Label Content="Ile?" Margin="37,10,10,0" />
+            <TextBox Text="{Binding HowMuch}"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
-            <Label Content="Metoda?"/>
-            <ComboBox ItemsSource="{Binding Methods}" SelectedItem="{Binding Method}"/>
+            <Label Content="Metoda" Margin="10,10,10,0"/>
+            <ComboBox ItemsSource="{Binding Methods}" SelectedItem="{Binding Method}" Width="100" Height="30"/>
             
         </StackPanel>
         <StackPanel Orientation="Horizontal">
-            <Label Content="Stopień?"/>
-            <ComboBox ItemsSource="{Binding Levels}" SelectedItem="{Binding Level}"/>
+            <Label Content="Stopień?" Margin="5,10,10,0"/>
+            <ComboBox ItemsSource="{Binding Levels}" SelectedItem="{Binding Level}" Width="100" Height="30"/>
         </StackPanel>
-        <Label Content="Metoda/y?"/>
-        <StackPanel Orientation="Horizontal">
-            <CheckBox Content="Aeropress" IsChecked="{Binding ForAeropress}"/>
+        <Label Content="Metoda/y" Margin="220,-280,0,0"/>
+        <StackPanel Orientation="Vertical" Margin="200,-120,0,0">
+            <CheckBox Content="Aeropress" IsChecked="{Binding ForAeropress}" />
             <CheckBox Content="Drip" IsChecked="{Binding ForDrip}"/>
             <CheckBox Content="Chemex" IsChecked="{Binding ForChemex}"/>
             <CheckBox Content="Pressure Express" IsChecked="{Binding ForPressureExpress}"/>
-        </StackPanel>
-        <StackPanel Orientation="Horizontal">
             <CheckBox Content="Drip Express" IsChecked="{Binding ForDripExpress}"/>
         </StackPanel>
-        <Label Content="Speciality?"/>
-        <CheckBox IsChecked="{Binding Speciality}"/>
+        <Label Content="Speciality" Margin="220,-48,0,0"/>
+        <CheckBox IsChecked="{Binding Speciality}" Margin="200,-30,0,0"/>
         <StackPanel Orientation="Horizontal">
-            <Label Content="Punktacja"/>
+            <Label Content="Punktacja" Margin="5,10,3,0"/>
             <TextBox Width="100" Text="{Binding Points}"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
-            <Label Content="Wady"/>
+            <Label Content="Wady" Margin="23,10,10,0"/>
             <TextBox Width="100" Text="{Binding Flaws}"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
-            <Label Content="Body"/>
+            <Label Content="Body" Margin="25,10,13,0"/>
             <TextBox Width="100" Text="{Binding Body}"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
-            <Label Content="Kwasowość"/>
+            <Label Content="Kwasowość" Margin="-2,10,0,0"/>
             <TextBox Width="100" Text="{Binding Acidity}"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
-            <Label Content="Sweetness"/>
+            <Label Content="Sweetness" Margin="5,10,0,0"/>
             <TextBox Width="100" Text="{Binding Sweetness}"/>
         </StackPanel>
             
