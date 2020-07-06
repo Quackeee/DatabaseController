@@ -19,6 +19,9 @@
     
     <Window.Resources>
         <vm:MainWindowVM x:Key="MainVM"/>
+        
+        
+        
     </Window.Resources>
 
     <Grid DataContext="{StaticResource MainVM}">

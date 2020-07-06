@@ -96,21 +96,21 @@
       <DependentUpon>SellCommandExecutorView.xaml</DependentUpon>
     </Compile>
     <Compile Include="DAL\DBConnection.cs" />
-    <Compile Include="DAL\Entities\Burning.cs" />
-    <Compile Include="DAL\Entities\Crop.cs" />
-    <Compile Include="DAL\Entities\Farm.cs" />
-    <Compile Include="DAL\Entities\Package.cs" />
-    <Compile Include="DAL\Entities\Roasted.cs" />
-    <Compile Include="DAL\Entities\RoastingRoom.cs" />
-    <Compile Include="DAL\Entities\Seed.cs" />
+    <Compile Include="DAL\Entities\General\Burning.cs" />
+    <Compile Include="DAL\Entities\General\Crop.cs" />
+    <Compile Include="DAL\Entities\General\Farm.cs" />
+    <Compile Include="DAL\Entities\General\Package.cs" />
+    <Compile Include="DAL\Entities\General\Roasted.cs" />
+    <Compile Include="DAL\Entities\General\RoastingRoom.cs" />
+    <Compile Include="DAL\Entities\General\Seed.cs" />
     <Compile Include="Model\DBModel.cs" />
-    <Compile Include="DAL\Repositories\BurningRep.cs" />
-    <Compile Include="DAL\Repositories\CropRep.cs" />
-    <Compile Include="DAL\Repositories\FarmRep.cs" />
-    <Compile Include="DAL\Repositories\PackageRep.cs" />
-    <Compile Include="DAL\Repositories\RoastedRep.cs" />
-    <Compile Include="DAL\Repositories\RoastingRoomRep.cs" />
-    <Compile Include="DAL\Repositories\SeedRep.cs" />
+    <Compile Include="DAL\Repositories\General\BurningRep.cs" />
+    <Compile Include="DAL\Repositories\General\CropRep.cs" />
+    <Compile Include="DAL\Repositories\General\FarmRep.cs" />
+    <Compile Include="DAL\Repositories\General\PackageRep.cs" />
+    <Compile Include="DAL\Repositories\General\RoastedRep.cs" />
+    <Compile Include="DAL\Repositories\General\RoastingRoomRep.cs" />
+    <Compile Include="DAL\Repositories\General\SeedRep.cs" />
     <Compile Include="MVVMBase\ViewModelBase.cs" />
     <Compile Include="Properties\Resources.pl-PL.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -195,6 +195,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="DAL\Entities\Roaster\" />
+    <Folder Include="DAL\Repositories\Roaster\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

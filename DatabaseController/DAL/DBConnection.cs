@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -41,6 +42,24 @@ namespace DatabaseController.DAL
         {
             UserID = userId;
             Password = password;
+        }
+
+        public static string GetUserRole()
+        {
+            string role = string.Empty;
+
+            using (var connection = DBConnection.Instance.Connection)
+            {
+                MySqlCommand command = new MySqlCommand("select current_role()", connection);
+                connection.Open();
+                var reader = command.ExecuteReader();
+                reader.Read();
+                role = reader.GetString(0).Trim('`','%','@');
+                Debug.WriteLine(role);
+                connection.Close();
+            }
+
+            return role;
         }
     }
 }

@@ -6,7 +6,6 @@
              xmlns:CEVM="clr-namespace:DatabaseController.CommandExecutors.ViewModel"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-
         <DataTemplate DataType="{x:Type CEVM:CommandExecutorWindowVM}">
             <CEWindow:CommandExecutorWindow/>
         </DataTemplate>

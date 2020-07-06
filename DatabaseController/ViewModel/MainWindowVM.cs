@@ -83,6 +83,9 @@ namespace DatabaseController.ViewModel
                         arg =>
                         {
                             DBConnection.LogIn(loginPanel.CurrentLogin, loginPanel.CurrentPassword);
+
+                            string role = DBConnection.GetUserRole();
+
                             dbModel = new DBModel();
                             OnPropertyChanged(nameof(dbModel));
                         },
