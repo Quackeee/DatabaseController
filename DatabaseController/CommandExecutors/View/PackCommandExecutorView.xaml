@@ -5,8 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:DatabaseController.CommandExecutors.View"
              xmlns:resx="clr-namespace:DatabaseController.Properties"
-             mc:Ignorable="d" 
-            d:DesignHeight="500" d:DesignWidth="400">
+             mc:Ignorable="d" >
     
     <UserControl.Resources>
         <Style TargetType="Label">
@@ -25,10 +24,12 @@
     <Grid Background="#FFDDCEB0">
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="170"/>
+            <ColumnDefinition Width="170"/>
         </Grid.ColumnDefinitions>
-
+        <Grid.RowDefinitions>
+            <RowDefinition Height="300"/>
+        </Grid.RowDefinitions>
         <StackPanel Grid.Column="0">
             <Label Content="{Binding Source={x:Static resx:Resources.whichoneLabel}}" HorizontalAlignment="Right"/>
             <Label Content="{Binding Source={x:Static resx:Resources.howmanyinpackageLabel}}" HorizontalAlignment="Right"/>
