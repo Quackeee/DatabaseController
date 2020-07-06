@@ -59,16 +59,9 @@ namespace DatabaseController.ViewModel
                             DBConnection.LogIn(loginPanel.CurrentLogin, loginPanel.CurrentPassword);
                             string role = DBConnection.GetUserRole();
 
-                            if (role == "root")
-                            {
-                                SelectedLNBVM = new RootVM();
-                                SelectedLNBVM.DbModel = new RootDBModel();
-                            }
-                            else if (role == "wlasciciel_palarni")
-                            {
-                                SelectedLNBVM = new RoasterVM();
-                                SelectedLNBVM.DbModel = new RoasterDBModel();
-                            }
+                            if (role == "root") SelectedLNBVM = new RootVM();
+                            else if (role == "wlasciciel_palarni") SelectedLNBVM = new RoasterVM();
+                            else throw new NotImplementedException("Selected user's role not supported");
                         },
                         arg =>
                         {

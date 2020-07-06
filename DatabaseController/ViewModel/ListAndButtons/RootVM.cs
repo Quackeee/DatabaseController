@@ -1,4 +1,5 @@
 ﻿using DatabaseController.CommandExecutors.ViewModel;
+using DatabaseController.Model;
 using MVVMBase;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,6 @@ namespace DatabaseController.ViewModel
 {
     class RootVM : ListAndButtonsVM
     {
-        
+        public RootVM() => DbModel = new RootDBModel();
     }
 }
