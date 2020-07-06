@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="DatabaseController.CommandExecutors.View.PackCommandExecutorView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DatabaseController.CommandExecutors.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="380" d:DesignWidth="300">
+    <StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label Content="Które?"/>
+            <TextBox Text="{Binding Which}" Width="100"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label Content="Ile w paczce?"/>
+            <TextBox Text="{Binding Weight}" Width="100"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label Content="Ile paczek?"/>
+            <TextBox Text="{Binding Count}" Width="100"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label Content="Cena?"/>
+            <TextBox Text="{Binding Price}" Width="100"/>
+        </StackPanel>
+    </StackPanel>
+</UserControl>

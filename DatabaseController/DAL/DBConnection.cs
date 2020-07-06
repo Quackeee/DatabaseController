@@ -14,7 +14,7 @@ namespace DatabaseController.DAL
         private static string Password { get; set; }
         
         private MySqlConnectionStringBuilder stringBuilder = new MySqlConnectionStringBuilder();
-        
+
         private static DBConnection instance = null;
         public static DBConnection Instance
         {
@@ -31,7 +31,7 @@ namespace DatabaseController.DAL
         private DBConnection()
         {
             stringBuilder.UserID = "root";
-            stringBuilder.Password = "Zaq12wsx";
+            stringBuilder.Password = "2mw2/tP40sz";
             stringBuilder.Server = "localhost";
             stringBuilder.Database = "roaster";
             stringBuilder.Port = 3306;

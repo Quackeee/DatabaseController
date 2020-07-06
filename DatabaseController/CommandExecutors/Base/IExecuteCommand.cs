@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DatabaseController.CommandExecutor.ViewModel
+namespace DatabaseController.CommandExecutors.ViewModel
 {
     interface IExecuteCommand
     {

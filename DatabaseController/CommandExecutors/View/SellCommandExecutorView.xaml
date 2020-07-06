@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="DatabaseController.CommandExecutors.View.ExampleCommandExecutorView"
+﻿<UserControl x:Class="DatabaseController.CommandExecutors.View.SellCommandExecutorView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -7,6 +7,9 @@
              mc:Ignorable="d" 
              d:DesignHeight="380" d:DesignWidth="300">
     <StackPanel Orientation="Vertical">
-        <TextBox Text="Działa!" Height="30" TextAlignment="Center" Width="200" Margin="10"></TextBox>
+        <Label Content="Które?"/>
+        <TextBox Text="{Binding Which}" Height="30" TextAlignment="Center" Width="200" Margin="10" ></TextBox>
+        <Label Content="Ile?"/>
+        <TextBox Text="{Binding HowMany}" Height="30" TextAlignment="Center" Width="200" Margin="10"></TextBox>
     </StackPanel>
 </UserControl>
