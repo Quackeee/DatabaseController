@@ -104,6 +104,9 @@
     <Compile Include="DAL\Entities\General\Roasted.cs" />
     <Compile Include="DAL\Entities\General\RoastingRoom.cs" />
     <Compile Include="DAL\Entities\General\Seed.cs" />
+    <Compile Include="DAL\Entities\Roaster\MyPackage.cs" />
+    <Compile Include="DAL\Entities\Roaster\MyRoastingRoom.cs" />
+    <Compile Include="DAL\Entities\Roaster\MySeed.cs" />
     <Compile Include="Model\Base\DBModel.cs" />
     <Compile Include="Model\RoasterDBModel.cs" />
     <Compile Include="Model\RootDBModel.cs" />
@@ -210,8 +213,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DAL\Entities\Roaster\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
