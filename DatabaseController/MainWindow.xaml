@@ -65,7 +65,7 @@
         <Button Content="{Binding Source={x:Static resx:Resources.LoginButton}}" HorizontalAlignment="Center" VerticalAlignment="Bottom" 
                 Margin="20" Width="100" Height="30" Command="{Binding LoginCommand}"/>
 
-        <Grid Grid.Column="1" Grid.RowSpan="2">
+        <Grid Grid.Column="1" Grid.RowSpan="2" Background="#FFDDCEB0">
             <ContentControl Content="{Binding SelectedLNBVM}"/>
         </Grid>
     </Grid>

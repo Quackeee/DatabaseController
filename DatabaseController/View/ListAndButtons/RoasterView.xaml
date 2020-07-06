@@ -13,7 +13,7 @@
             <ColumnDefinition Width="0.3*"/>
         </Grid.ColumnDefinitions>
 
-        <TabControl Grid.Column="0" Grid.RowSpan="2">
+        <TabControl Grid.Column="0" Grid.RowSpan="2" >
             <TabItem Header="Moje ziarna">
                 <DataGrid ItemsSource="{Binding DbModel.Burnings}" AutoGenerateColumns="True"/>
             </TabItem>
@@ -24,7 +24,7 @@
                 <DataGrid ItemsSource="{Binding DbModel.Burnings}" AutoGenerateColumns="True"/>
             </TabItem>
         </TabControl>
-        <StackPanel Grid.Column="1" Grid.RowSpan="2" Background="AliceBlue">
+        <StackPanel Grid.Column="1" Grid.RowSpan="2">
             <Button Content="{Binding Source={x:Static resx:Resources.command1}}" Command="{Binding ShowRoastCommandExecutor}" Margin="20"/>
             <Button Content="{Binding Source={x:Static resx:Resources.command2}}" Command="{Binding ShowPackCommandExecutor}" Margin="20"/>
             <Button Content="{Binding Source={x:Static resx:Resources.command3}}" Command="{Binding ShowSellCommandExecutor}" Margin="20"/>
