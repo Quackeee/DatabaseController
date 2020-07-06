@@ -58,10 +58,8 @@ namespace DatabaseController.ViewModel
                     loginCommand = new RelayCommand(
                         arg =>
                         {
-                            
                             DBConnection.LogIn(loginPanel.CurrentLogin, loginPanel.CurrentPassword);
                             string role = DBConnection.GetUserRole();
-                            Debug.WriteLine($"Role: {role}");
 
                             if (role == "root")
                             {
@@ -78,7 +76,7 @@ namespace DatabaseController.ViewModel
                         },
                         arg =>
                         {
-                            if (LoginPanel.CurrentLogin == null || LoginPanel.CurrentPassword == null)
+                            if (LoginPanel.CurrentLogin == null || LoginPanel.CurrentPassword == null || isLogged)
                                 return false;      
                             return true;
                         });
@@ -97,7 +95,8 @@ namespace DatabaseController.ViewModel
                     logoutCommand = new RelayCommand(
                         arg =>
                         {
-                            DBConnection.LogOut();
+                            SelectedLNBVM = null;
+                            isLogged = false;
                         },
                         arg =>
                         {
@@ -108,11 +107,6 @@ namespace DatabaseController.ViewModel
                 }
                 return logoutCommand;
             }
-        }
-
-        private void RefreshData()
-        {
-           
         }
     }
 }
