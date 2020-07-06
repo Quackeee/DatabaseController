@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DatabaseController.DAL;
 using MVVMBase;
 
 namespace DatabaseController.CommandExecutors.ViewModel
@@ -13,9 +14,8 @@ namespace DatabaseController.CommandExecutors.ViewModel
         protected abstract string _generateCommandString();
         public void ExecuteCommand()
         {
-            // Tutaj trzeba zrobić coś, co Będzie kazało bazie danych wywołać daną funkcję
-            // Coś w stylu BazaDanych.WywołajZapytanie(_generateCommandString());
-            Debug.WriteLine(_generateCommandString());
+            DBConnection.ExecuteCommand(_generateCommandString());
+            _mainWindow.SelectedLNBVM.RefreshLisings();
         }
         public abstract bool CanExecuteCommand();
     }

@@ -9,36 +9,43 @@
              d:DesignHeight="450" d:DesignWidth="800">
 
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition Width="0.3*"/>
-        </Grid.ColumnDefinitions>
         
-        <TabControl Grid.Column="0" Grid.RowSpan="2">
-            <TabItem x:Name="burningTabItem" Header="Palenie">
-                <DataGrid ItemsSource="{Binding DbModel.Burnings}" AutoGenerateColumns="True"/>
-            </TabItem>
-            <TabItem x:Name="cropTabItem" Header="Zbior">
-                <DataGrid ItemsSource="{Binding DbModel.Crops}" AutoGenerateColumns="True"/>
-            </TabItem>
-            <TabItem x:Name="farmTabItem" Header="Farma">
-                <DataGrid ItemsSource="{Binding DbModel.Farms}" AutoGenerateColumns="True"/>
-            </TabItem>
-            <TabItem x:Name="packageTabItem" Header="Paczka">
-                <DataGrid ItemsSource="{Binding DbModel.Packages}" AutoGenerateColumns="True"/>
-            </TabItem>
-            <TabItem x:Name="roastedTabItem" Header="Wypalone">
-                <DataGrid ItemsSource="{Binding DbModel.Roasteds}" AutoGenerateColumns="True"/>
-            </TabItem>
-            <TabItem x:Name="roastingRoomTabItem" Header="Palarnia">
-                <DataGrid ItemsSource="{Binding DbModel.RoastingRooms}" AutoGenerateColumns="True"/>
-            </TabItem>
-            <TabItem x:Name="seedTabItem" Header="Ziarna">
-                <DataGrid ItemsSource="{Binding DbModel.Seeds}" AutoGenerateColumns="True"/>
-            </TabItem>
-        </TabControl>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="0.3*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Background="AliceBlue">
+            <TabControl Grid.Column="0" Grid.RowSpan="2" >
+                <TabItem x:Name="burningTabItem" Header="Palenie" Width="113">
+                    <DataGrid ItemsSource="{Binding DbModel.Burnings}" AutoGenerateColumns="True"/>
+                </TabItem>
+                <TabItem x:Name="cropTabItem" Header="Zbior" Width="113">
+                    <DataGrid ItemsSource="{Binding DbModel.Crops}" AutoGenerateColumns="True"/>
+                </TabItem>
+                <TabItem x:Name="farmTabItem" Header="Farma" Width="113">
+                    <DataGrid ItemsSource="{Binding DbModel.Farms}" AutoGenerateColumns="True"/>
+                </TabItem>
+                <TabItem x:Name="packageTabItem" Header="Paczka" Width="113">
+                    <DataGrid ItemsSource="{Binding DbModel.Packages}" AutoGenerateColumns="True"/>
+                </TabItem>
+                <TabItem x:Name="roastedTabItem" Header="Wypalone" Width="113">
+                    <DataGrid ItemsSource="{Binding DbModel.Roasteds}" AutoGenerateColumns="True"/>
+                </TabItem>
+                <TabItem x:Name="roastingRoomTabItem" Header="Palarnia" Width="113">
+                    <DataGrid ItemsSource="{Binding DbModel.RoastingRooms}" AutoGenerateColumns="True"/>
+                </TabItem>
+                <TabItem x:Name="seedTabItem" Header="Ziarna" Width="113">
+                    <DataGrid ItemsSource="{Binding DbModel.Seeds}" AutoGenerateColumns="True"/>
+                </TabItem>
+            </TabControl>
+        </StackPanel>
 
-        <StackPanel Grid.Column="1" Grid.RowSpan="2">
+
+        <StackPanel Grid.Column="0" Grid.Row="2" Background="#FFDDCEB0">
+            <Label Content="Komenda:"/>
+            <TextBox Text="{Binding CommandString}" Width="500" Height="25" Margin="-200,0,0,0" />
+            <Button Content="Execute" Command="{Binding Execute}" Width="130" Margin="500,-23,0,0"/>
+            <Label Content="{Binding OutputMessage}" Width="700"/>
         </StackPanel>
     </Grid>
 </UserControl>

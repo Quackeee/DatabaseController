@@ -14,7 +14,7 @@ namespace DatabaseController.CommandExecutors.ViewModel
         public double? Price { get; set; }
 
         protected override string _generateCommandString() =>
-            $"call pakuj({Which}, {Weight}, {Count}, {Math.Round((double)Price,2)})";
+            $"call pakuj({Which}, {Weight.ToString().Replace(',', '.')}, {Count}, {Math.Round((double)Price,2).ToString().Replace(',', '.')})";
         public override bool CanExecuteCommand() =>
             !(Which is null || Weight is null || Count is null || Price is null);
            

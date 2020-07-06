@@ -62,5 +62,31 @@ namespace DatabaseController.DAL
 
             return role;
         }
+
+        public static string TryExecuteCommand(string commandString)
+        {
+            using (var connection = Instance.Connection)
+            {
+                try
+                {
+                    connection.Open();
+                    Debug.WriteLine(commandString);
+                    int affected = new MySqlCommand(commandString, connection).ExecuteNonQuery();
+                    connection.Close();
+                    return $"Query OK: {affected} rows affected.";
+                } catch (Exception e) { return e.Message; }
+            }
+        }
+
+        public static void ExecuteCommand(string commandString)
+        {
+            using (var connection = Instance.Connection)
+            {
+                connection.Open();
+                Debug.WriteLine(commandString);
+                int affected = new MySqlCommand(commandString, connection).ExecuteNonQuery();
+                connection.Close();
+            }
+        }
     }
 }

@@ -19,5 +19,15 @@ namespace DatabaseController.Model
         public ObservableCollection<RoastingRoom> RoastingRooms { get; set; } = GetAllDBObjects<RoastingRoom>("select * from palarnia");
         public ObservableCollection<Ziarna> Seeds { get; set; } = GetAllDBObjects<Ziarna>("select * from ziarna");
 
+        public override void ReloadListings()
+        {
+            Burnings = GetAllDBObjects<Burning>("select * from palenie");
+            Crops = GetAllDBObjects<Crop>("select * from zbior");
+            Farms = GetAllDBObjects<Farm>("select * from farma");
+            Packages = GetAllDBObjects<Package>("select * from paczka");
+            Roasteds = GetAllDBObjects<Roasted>("select * from wypalone");
+            RoastingRooms = GetAllDBObjects<RoastingRoom>("select * from palarnia");
+            Seeds = GetAllDBObjects<Seed>("select * from ziarna");
+        }
     }
 }
