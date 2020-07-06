@@ -43,7 +43,7 @@ namespace DatabaseController.ViewModel
         public MainWindowVM()
         {
             loginPanel = new LogInVM();
-            SelectedLNBVM = new RootVM();
+            //SelectedLNBVM = new RootVM();
             _mainWindow = this;
         }
 
@@ -59,8 +59,17 @@ namespace DatabaseController.ViewModel
                         {
                             DBConnection.LogIn(loginPanel.CurrentLogin, loginPanel.CurrentPassword);
                             string role = DBConnection.GetUserRole();
-                            Debug.WriteLine(role);
-                            SelectedLNBVM.DbModel = new RootDBModel();
+
+                            if (role == "root")
+                            {
+                                SelectedLNBVM = new RootVM();
+                                SelectedLNBVM.DbModel = new RootDBModel();
+                            }
+                            else if (role == "wlasciciel_palarni")
+                            {
+                                SelectedLNBVM = new RoasterVM();
+                                SelectedLNBVM.DbModel = new RoasterDBModel();
+                            }
                         },
                         arg =>
                         {
