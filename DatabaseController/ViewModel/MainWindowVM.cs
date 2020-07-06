@@ -25,6 +25,8 @@ namespace DatabaseController.ViewModel
     class MainWindowVM : MVVMBase.ViewModelBase
     {
 
+        private bool isLogged = false;
+
         private LogInVM loginPanel;
         public LogInVM LoginPanel
         {
@@ -65,12 +67,40 @@ namespace DatabaseController.ViewModel
                         },
                         arg =>
                         {
-                            if (LoginPanel.CurrentLogin == null || LoginPanel.CurrentPassword == null)
+                            if (LoginPanel.CurrentLogin == null || LoginPanel.CurrentPassword == null || isLogged)
                                 return false;      
                             return true;
                         });
                 }
                 return loginCommand;
+            }
+        }
+
+        private ICommand logoutCommand;
+        public ICommand LogoutCommand
+        {
+            get
+            {
+                if (logoutCommand == null)
+                {
+                    logoutCommand = new RelayCommand(
+                        arg =>
+                        {
+                            using(var connection = DBConnection.Instance.Connection)
+                            {
+                                isLogged = false;
+                                SelectedLNBVM = null;
+                                //SelectedLNBVM.DbModel = null;
+                            }
+                        },
+                        arg =>
+                        {
+                            if (isLogged)
+                                return true;
+                            return false;
+                        });
+                }
+                return logoutCommand;
             }
         }
     }
