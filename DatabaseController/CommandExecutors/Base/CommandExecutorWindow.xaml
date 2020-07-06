@@ -27,7 +27,7 @@
         
     </UserControl.Resources>
 
-    <Grid>
+    <Grid Background="#FFDDCEB0">
         <Grid.RowDefinitions>
             <RowDefinition Height="357*"></RowDefinition>
             <RowDefinition Height="62*"/>

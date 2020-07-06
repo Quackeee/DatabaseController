@@ -14,28 +14,43 @@
             <RowDefinition/>
             <RowDefinition Height="0.3*"/>
         </Grid.RowDefinitions>
-        <StackPanel Background="AliceBlue">
-            <TabControl Grid.Column="0" Grid.RowSpan="2">
-                <TabItem x:Name="burningTabItem" Header="{Binding Source={x:Static resx:Resources.burningLabel}}" Width="113">
-                    <DataGrid VerticalScrollBarVisibility="Auto" ItemsSource="{Binding DbModel.Burnings}" AutoGenerateColumns="True"/>
+        
+	<StackPanel>
+            <TabControl Grid.Column="0" Grid.RowSpan="2" Height="400">
+                <TabItem x:Name="burningTabItem" Header="Palenie" Width="113">
+                    <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Visible">
+                        <DataGrid ItemsSource="{Binding DbModel.Burnings}" AutoGenerateColumns="True"/>
+                    </ScrollViewer>
                 </TabItem>
-                <TabItem x:Name="cropTabItem" Header="{Binding Source={x:Static resx:Resources.cropLabel}}" Width="113">
-                    <DataGrid VerticalScrollBarVisibility="Auto" ItemsSource="{Binding DbModel.Crops}" AutoGenerateColumns="True"/>
+                <TabItem x:Name="cropTabItem" Header="Zbior" Width="113">
+                    <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Visible">
+                    <DataGrid ItemsSource="{Binding DbModel.Crops}" AutoGenerateColumns="True"/>
+                    </ScrollViewer>
                 </TabItem>
-                <TabItem x:Name="farmTabItem" Header="{Binding Source={x:Static resx:Resources.farmLabel}}" Width="113">
-                    <DataGrid VerticalScrollBarVisibility="Auto" ItemsSource="{Binding DbModel.Farms}" AutoGenerateColumns="True"/>
+                <TabItem x:Name="farmTabItem" Header="Farma" Width="113">
+                    <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Visible">
+                    <DataGrid ItemsSource="{Binding DbModel.Farms}" AutoGenerateColumns="True"/>
+                    </ScrollViewer>
                 </TabItem>
-                <TabItem x:Name="packageTabItem" Header="{Binding Source={x:Static resx:Resources.packageLabel}}" Width="113">
-                    <DataGrid VerticalScrollBarVisibility="Auto" ItemsSource="{Binding DbModel.Packages}" AutoGenerateColumns="True"/>
+                <TabItem x:Name="packageTabItem" Header="Paczka" Width="113">
+                    <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Visible">
+                    <DataGrid ItemsSource="{Binding DbModel.Packages}" AutoGenerateColumns="True"/>
+                    </ScrollViewer>
                 </TabItem>
-                <TabItem x:Name="roastedTabItem" Header="{Binding Source={x:Static resx:Resources.roastedLabel}}" Width="113">
-                    <DataGrid VerticalScrollBarVisibility="Auto" ItemsSource="{Binding DbModel.Roasteds}" AutoGenerateColumns="True"/>
+                <TabItem x:Name="roastedTabItem" Header="Wypalone" Width="113">
+                    <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Visible">
+                    <DataGrid ItemsSource="{Binding DbModel.Roasteds}" AutoGenerateColumns="True"/>
+                    </ScrollViewer>
                 </TabItem>
-                <TabItem x:Name="roastingRoomTabItem" Header="{Binding Source={x:Static resx:Resources.roastingRoomLabel}}" Width="113">
-                    <DataGrid VerticalScrollBarVisibility="Auto" ItemsSource="{Binding DbModel.RoastingRooms}" AutoGenerateColumns="True"/>
+                <TabItem x:Name="roastingRoomTabItem" Header="Palarnia" Width="113">
+                    <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Visible">
+                    <DataGrid ItemsSource="{Binding DbModel.RoastingRooms}" AutoGenerateColumns="True"/>
+                    </ScrollViewer>
                 </TabItem>
-                <TabItem x:Name="seedTabItem" Header="{Binding Source={x:Static resx:Resources.seedLabel}}" Width="113">
+                <TabItem x:Name="seedTabItem" Header="Ziarna" Width="113">
+                    <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Visible">
                     <DataGrid ItemsSource="{Binding DbModel.Seeds}" AutoGenerateColumns="True"/>
+                    </ScrollViewer>
                 </TabItem>
             </TabControl>
         </StackPanel>
