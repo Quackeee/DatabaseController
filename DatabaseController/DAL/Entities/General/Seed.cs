@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DatabaseController.Model
 {
-    public class Ziarna : Entity
+    public class Seed : Entity
     {
         public uint IdZ { get; private set; }
         public double Waga { get; private set; }

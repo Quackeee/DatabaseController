@@ -67,6 +67,8 @@ namespace DatabaseController.ViewModel
 
                             LoginPanel.CurrentLogin = null;
                             LoginPanel.CurrentPassword = null;
+
+                            isLogged = true;
                         },
                         arg =>
                         {

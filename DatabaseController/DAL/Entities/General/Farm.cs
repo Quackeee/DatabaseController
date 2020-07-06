@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DatabaseController.Model
 {
-    public class Farma : Entity
+    public class Farm : Entity
     {
         public string Nazwa { get; private set; }
         public string Wlasciciel { get; private set; }

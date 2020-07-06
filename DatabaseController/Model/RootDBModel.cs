@@ -13,11 +13,11 @@ namespace DatabaseController.Model
     {
         public ObservableCollection<Burning> Burnings { get; set; } = GetAllDBObjects<Burning>("select * from palenie");
         public ObservableCollection<Crop> Crops { get; set; } = GetAllDBObjects<Crop>("select * from zbior");
-        public ObservableCollection<Farma> Farms { get; set; } = GetAllDBObjects<Farma>("select * from farma");
+        public ObservableCollection<Farm> Farms { get; set; } = GetAllDBObjects<Farm>("select * from farma");
         public ObservableCollection<Package> Packages { get; set; } = GetAllDBObjects<Package>("select * from paczka");
         public ObservableCollection<Roasted> Roasteds { get; set; } = GetAllDBObjects<Roasted>("select * from wypalone");
         public ObservableCollection<RoastingRoom> RoastingRooms { get; set; } = GetAllDBObjects<RoastingRoom>("select * from palarnia");
-        public ObservableCollection<Ziarna> Seeds { get; set; } = GetAllDBObjects<Ziarna>("select * from ziarna");
+        public ObservableCollection<Seed> Seeds { get; set; } = GetAllDBObjects<Seed>("select * from ziarna");
 
         public override void ReloadListings()
         {
