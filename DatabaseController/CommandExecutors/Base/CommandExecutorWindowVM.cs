@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MVVMBase;
 
-namespace DatabaseController.CommandExecutor.ViewModel
+namespace DatabaseController.CommandExecutors.ViewModel
 {
     class CommandExecutorWindowVM : ViewModelBase
     {

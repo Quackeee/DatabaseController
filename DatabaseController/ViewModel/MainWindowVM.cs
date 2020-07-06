@@ -1,4 +1,4 @@
-﻿using DatabaseController.CommandExecutor.ViewModel;
+﻿using DatabaseController.CommandExecutors.ViewModel;
 using DatabaseController.DAL;
 using MVVMBase;
 using DatabaseController.Model;
@@ -43,12 +43,31 @@ namespace DatabaseController.ViewModel
             loginPanel = new LogInVM();
         }
 
-        public DisplayCECommand ShowExampleCommandExecutor
+        public DisplayCECommand ShowSellCommandExecutor
         {
             get
             {
                 return new DisplayCECommand(
-                    arg => new ExampleCommandExecutorVM()
+                    arg => new SellCommandExecutorVM()
+                    );
+            }
+        }
+
+        public DisplayCECommand ShowRoastCommandExecutor
+        {
+            get
+            {
+                return new DisplayCECommand(
+                    arg => new RoastCommandExecutorVM()
+                    );
+            }
+        }
+        public DisplayCECommand ShowPackCommandExecutor
+        {
+            get
+            {
+                return new DisplayCECommand(
+                    arg => new PackCommandExecutorVM()
                     );
             }
         }

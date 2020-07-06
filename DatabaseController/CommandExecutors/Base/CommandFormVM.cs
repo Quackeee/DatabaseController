@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MVVMBase;
 
-namespace DatabaseController.CommandExecutor.ViewModel
+namespace DatabaseController.CommandExecutors.ViewModel
 {
     abstract class CommandFormVM : ViewModelBase, IExecuteCommand
     {
@@ -14,8 +15,8 @@ namespace DatabaseController.CommandExecutor.ViewModel
         {
             // Tutaj trzeba zrobić coś, co Będzie kazało bazie danych wywołać daną funkcję
             // Coś w stylu BazaDanych.WywołajZapytanie(_generateCommandString());
-            throw new NotImplementedException();
+            Debug.WriteLine(_generateCommandString());
         }
-        public virtual bool CanExecuteCommand() { return true; }
+        public abstract bool CanExecuteCommand();
     }
 }

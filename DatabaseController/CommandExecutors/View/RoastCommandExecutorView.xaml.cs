@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace DatabaseController.CommandExecutors.View
 {
     /// <summary>
-    /// Logika interakcji dla klasy ExampleCommandExecutorView.xaml
+    /// Logika interakcji dla klasy RoastCommandExecutorView.xaml
     /// </summary>
-    public partial class ExampleCommandExecutorView : UserControl
+    public partial class RoastCommandExecutorView : UserControl
     {
-        public ExampleCommandExecutorView()
+        public RoastCommandExecutorView()
         {
             InitializeComponent();
         }

@@ -4,7 +4,7 @@
             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
             xmlns:local="clr-namespace:DatabaseController.CommandExecutors.View"
-            xmlns:vm="clr-namespace:DatabaseController.CommandExecutor.ViewModel"
+            xmlns:vm="clr-namespace:DatabaseController.CommandExecutors.ViewModel"
             xmlns:v="clr-namespace:DatabaseController.CommandExecutors.View"
             mc:Ignorable="d">
 
@@ -12,8 +12,14 @@
         <vm:CommandExecutorWindowVM x:Key="CEVM"/>
         
 
-        <DataTemplate DataType="{x:Type vm:ExampleCommandExecutorVM}">
-            <v:ExampleCommandExecutorView/>
+        <DataTemplate DataType="{x:Type vm:SellCommandExecutorVM}">
+            <v:SellCommandExecutorView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:RoastCommandExecutorVM}">
+            <v:RoastCommandExecutorView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:PackCommandExecutorVM}">
+            <v:PackCommandExecutorView/>
         </DataTemplate>
         
         

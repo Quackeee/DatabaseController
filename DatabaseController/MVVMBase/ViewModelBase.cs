@@ -1,4 +1,4 @@
-﻿using DatabaseController.CommandExecutor.ViewModel;
+﻿using DatabaseController.CommandExecutors.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

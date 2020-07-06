@@ -3,13 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:DatabaseController"
              xmlns:CEWindow="clr-namespace:DatabaseController.CommandExecutors.View"
-             xmlns:CEVM="clr-namespace:DatabaseController.CommandExecutor.ViewModel"
+             xmlns:CEVM="clr-namespace:DatabaseController.CommandExecutors.ViewModel"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
 
         <DataTemplate DataType="{x:Type CEVM:CommandExecutorWindowVM}">
             <CEWindow:CommandExecutorWindow/>
         </DataTemplate>
-            
     </Application.Resources>
 </Application>

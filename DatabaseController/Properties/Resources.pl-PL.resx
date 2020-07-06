@@ -118,13 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="command1" xml:space="preserve">
-    <value>Przyklad 1</value>
+    <value>Wypal</value>
   </data>
   <data name="command2" xml:space="preserve">
-    <value>Przyklad 2</value>
+    <value>Pakuj</value>
   </data>
   <data name="command3" xml:space="preserve">
-    <value>Przyklad 3</value>
+    <value>Sprzedaj</value>
   </data>
   <data name="command4" xml:space="preserve">
     <value>Przyklad 4</value>

@@ -84,8 +84,16 @@
     <Compile Include="CommandExecutors\Base\CommandExecutorWindow.xaml.cs">
       <DependentUpon>CommandExecutorWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CommandExecutors\View\ExampleCommandExecutorView.xaml.cs">
-      <DependentUpon>ExampleCommandExecutorView.xaml</DependentUpon>
+    <Compile Include="CommandExecutors\ViewModel\PackCommandExecutorVM.cs" />
+    <Compile Include="CommandExecutors\ViewModel\RoastCommandExecutorVM.cs" />
+    <Compile Include="CommandExecutors\View\PackCommandExecutorView.xaml.cs">
+      <DependentUpon>PackCommandExecutorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CommandExecutors\View\RoastCommandExecutorView.xaml.cs">
+      <DependentUpon>RoastCommandExecutorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CommandExecutors\View\SellCommandExecutorView.xaml.cs">
+      <DependentUpon>SellCommandExecutorView.xaml</DependentUpon>
     </Compile>
     <Compile Include="DAL\DBConnection.cs" />
     <Compile Include="DAL\Entities\Burning.cs" />
@@ -114,7 +122,7 @@
     <Compile Include="CommandExecutors\Base\CommandExecutorWindowVM.cs" />
     <Compile Include="CommandExecutors\Base\CommandFormVM.cs" />
     <Compile Include="CommandExecutors\Base\IExecuteCommand.cs" />
-    <Compile Include="CommandExecutors\ViewModel\ExampleCommandFormVM.cs" />
+    <Compile Include="CommandExecutors\ViewModel\SellCommandFormVM.cs" />
     <Compile Include="View\DialogBoxes\CommandDialogBox.cs" />
     <Compile Include="View\DialogBoxes\FileDialogBox.cs" />
     <Compile Include="View\DialogBoxes\MessageDialogBox.cs" />
@@ -127,7 +135,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="CommandExecutors\View\ExampleCommandExecutorView.xaml">
+    <Page Include="CommandExecutors\View\PackCommandExecutorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CommandExecutors\View\RoastCommandExecutorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CommandExecutors\View\SellCommandExecutorView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
