@@ -82,6 +82,7 @@ namespace MVVMBase
             var win = new Window();
             win.Content = new CommandExecutorWindowVM(_commandForm(parameter));
             win.SizeToContent = SizeToContent.WidthAndHeight;
+            win.ResizeMode = ResizeMode.NoResize;
             win.ShowDialog();
         }
 
