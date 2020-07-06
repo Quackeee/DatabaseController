@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="DatabaseController.View.RootView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DatabaseController.View"
+             xmlns:resx="clr-namespace:DatabaseController.Properties"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0.3*"/>
+        </Grid.ColumnDefinitions>
+        
+        <TabControl Grid.Column="0" Grid.RowSpan="2">
+            <TabItem x:Name="burningTabItem" Header="Palenie">
+                <DataGrid ItemsSource="{Binding DbModel.Burnings}" AutoGenerateColumns="True"/>
+            </TabItem>
+            <TabItem x:Name="cropTabItem" Header="Zbior">
+                <DataGrid ItemsSource="{Binding DbModel.Crops}" AutoGenerateColumns="True"/>
+            </TabItem>
+            <TabItem x:Name="farmTabItem" Header="Farma">
+                <DataGrid ItemsSource="{Binding DbModel.Farms}" AutoGenerateColumns="True"/>
+            </TabItem>
+            <TabItem x:Name="packageTabItem" Header="Paczka">
+                <DataGrid ItemsSource="{Binding DbModel.Packages}" AutoGenerateColumns="True"/>
+            </TabItem>
+            <TabItem x:Name="roastedTabItem" Header="Wypalone">
+                <DataGrid ItemsSource="{Binding DbModel.Roasteds}" AutoGenerateColumns="True"/>
+            </TabItem>
+            <TabItem x:Name="roastingRoomTabItem" Header="Palarnia">
+                <DataGrid ItemsSource="{Binding DbModel.RoastingRooms}" AutoGenerateColumns="True"/>
+            </TabItem>
+            <TabItem x:Name="seedTabItem" Header="Ziarna">
+                <DataGrid ItemsSource="{Binding DbModel.Seeds}" AutoGenerateColumns="True"/>
+            </TabItem>
+        </TabControl>
+
+        <StackPanel Grid.Column="1" Grid.RowSpan="2">
+            <Label Content="Komenda:"/>
+            <TextBox Text="{Binding CommandString}"/>
+            <Button Content="Execute" Command="{Binding Execute}" Width="130"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

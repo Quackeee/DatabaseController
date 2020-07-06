@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using DatabaseController.DAL.Entities;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -9,7 +10,7 @@ using System.Windows;
 
 namespace DatabaseController.Model
 {
-    public class Roasted
+    public class Roasted : Entity
     {
         public uint IdR { get; private set; }
         public double Weight { get; private set; }
@@ -21,8 +22,15 @@ namespace DatabaseController.Model
         public string Acidity { get; private set; }
         public string Sweetness { get; private set; }
         
-        public Roasted(MySqlDataReader dataReader)
+
+        public override string ToString()
         {
+            return ($"{IdR}, {Weight}, {Speciality}, {Cons}");
+        }
+
+        public override void LoadFromReader(MySqlDataReader dataReader)
+        {
+
             IdR = uint.Parse(dataReader["id_r"].ToString());
             Weight = double.Parse(dataReader["waga"].ToString());
             Method = dataReader["zalecana_metoda"].ToString();
@@ -32,11 +40,6 @@ namespace DatabaseController.Model
             Body = dataReader["body"].ToString();
             Acidity = dataReader["kwasowosc"].ToString();
             Sweetness = dataReader["slodycz"].ToString();
-        }
-
-        public override string ToString()
-        {
-            return ($"{IdR}, {Weight}, {Speciality}, {Cons}");
         }
     }
 }

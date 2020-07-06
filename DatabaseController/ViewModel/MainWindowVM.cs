@@ -24,12 +24,8 @@ namespace DatabaseController.ViewModel
 {
     class MainWindowVM : MVVMBase.ViewModelBase
     {
-        private DBModel dbModel;
-        public DBModel DbModel
-        {
-            get => dbModel;
-            set { dbModel = value;OnPropertyChanged(nameof(DbModel)); }
-        }
+
+        private bool isLogged = false;
 
         private LogInVM loginPanel;
         public LogInVM LoginPanel
@@ -38,38 +34,18 @@ namespace DatabaseController.ViewModel
             set { loginPanel = value; OnPropertyChanged(nameof(LoginPanel)); }
         }
 
+        private ListAndButtonsVM selectedLNBVM;
+        public ListAndButtonsVM SelectedLNBVM
+        {
+            get => selectedLNBVM;
+            set { selectedLNBVM = value; OnPropertyChanged(nameof(selectedLNBVM)); }
+        }
+        
+
         public MainWindowVM()
         {
             loginPanel = new LogInVM();
-        }
-
-        public DisplayCECommand ShowSellCommandExecutor
-        {
-            get
-            {
-                return new DisplayCECommand(
-                    arg => new SellCommandExecutorVM()
-                    );
-            }
-        }
-
-        public DisplayCECommand ShowRoastCommandExecutor
-        {
-            get
-            {
-                return new DisplayCECommand(
-                    arg => new RoastCommandExecutorVM()
-                    );
-            }
-        }
-        public DisplayCECommand ShowPackCommandExecutor
-        {
-            get
-            {
-                return new DisplayCECommand(
-                    arg => new PackCommandExecutorVM()
-                    );
-            }
+            _mainWindow = this;
         }
 
         private ICommand loginCommand;
@@ -83,12 +59,15 @@ namespace DatabaseController.ViewModel
                         arg =>
                         {
                             DBConnection.LogIn(loginPanel.CurrentLogin, loginPanel.CurrentPassword);
-                            dbModel = new DBModel();
-                            OnPropertyChanged(nameof(dbModel));
+                            string role = DBConnection.GetUserRole();
+
+                            if (role == "root") SelectedLNBVM = new RootVM();
+                            else if (role == "wlasciciel_palarni") SelectedLNBVM = new RoasterVM();
+                            else throw new NotImplementedException("Selected user's role not supported");
                         },
                         arg =>
                         {
-                            if (LoginPanel.CurrentLogin == null || LoginPanel.CurrentPassword == null)
+                            if (LoginPanel.CurrentLogin == null || LoginPanel.CurrentPassword == null || isLogged)
                                 return false;      
                             return true;
                         });
@@ -97,24 +76,32 @@ namespace DatabaseController.ViewModel
             }
         }
 
-        private ICommand testCommand;
-        public ICommand TestCommand
+        private ICommand logoutCommand;
+        public ICommand LogoutCommand
         {
             get
             {
-                if(testCommand == null)
+                if (logoutCommand == null)
                 {
-                    testCommand = new RelayCommand(
+                    logoutCommand = new RelayCommand(
                         arg =>
                         {
-                            foreach (var x in dbModel.Farms)
-                                Debug.WriteLine(x);
+                            using(var connection = DBConnection.Instance.Connection)
+                            {
+                                isLogged = false;
+                                SelectedLNBVM = null;
+                                //SelectedLNBVM.DbModel = null;
+                            }
                         },
-                        arg => { return true; });
+                        arg =>
+                        {
+                            if (isLogged)
+                                return true;
+                            return false;
+                        });
                 }
-                return testCommand;
+                return logoutCommand;
             }
         }
-
     }
 }
