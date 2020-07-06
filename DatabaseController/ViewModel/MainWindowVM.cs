@@ -19,6 +19,7 @@ using System.Windows.Media.Animation;
 using Resx = DatabaseController.Properties.Resources;
 using System.Diagnostics;
 using System.Windows.Navigation;
+using System.Windows;
 
 namespace DatabaseController.ViewModel
 {
@@ -58,17 +59,27 @@ namespace DatabaseController.ViewModel
                     loginCommand = new RelayCommand(
                         arg =>
                         {
-                            DBConnection.LogIn(loginPanel.CurrentLogin, loginPanel.CurrentPassword);
-                            string role = DBConnection.GetUserRole();
+                            try
+                            {
+                                DBConnection.LogIn(loginPanel.CurrentLogin, loginPanel.CurrentPassword);
+                                string role = DBConnection.GetUserRole();
 
-                            if (role == "root") SelectedLNBVM = new RootVM();
-                            else if (role == "wlasciciel_palarni") SelectedLNBVM = new RoasterVM();
-                            else throw new NotImplementedException($"Selected user's role not supported: {role}");
+                                if (role == "root") SelectedLNBVM = new RootVM();
+                                else if (role == "wlasciciel_palarni") SelectedLNBVM = new RoasterVM();
+                                else throw new NotImplementedException($"Selected user's role not supported: {role}");
 
-                            LoginPanel.CurrentLogin = null;
-                            LoginPanel.CurrentPassword = null;
+                                LoginPanel.CurrentLogin = null;
+                                LoginPanel.CurrentPassword = null;
 
-                            isLogged = true;
+                                isLogged = true;
+                            }
+                            catch (Exception e) 
+                            { 
+                                MessageBox.Show(e.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                                loginPanel.CurrentLogin = null;
+                                loginPanel.CurrentPassword = null;
+                            }
+                           
                         },
                         arg =>
                         {

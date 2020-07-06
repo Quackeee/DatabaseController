@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace DatabaseController.DAL
 {
@@ -52,10 +53,11 @@ namespace DatabaseController.DAL
             using (var connection = Instance.Connection)
             {
                 MySqlCommand command = new MySqlCommand("select current_role()", connection);
+
                 connection.Open();
                 var reader = command.ExecuteReader();
                 reader.Read();
-                role = reader.GetString(0).Trim('`','%','@');
+                role = reader.GetString(0).Trim('`', '%', '@');
                 Debug.WriteLine(role);
                 connection.Close();
             }
