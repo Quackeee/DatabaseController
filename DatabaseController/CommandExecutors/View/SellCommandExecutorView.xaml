@@ -6,10 +6,10 @@
              xmlns:local="clr-namespace:DatabaseController.CommandExecutors.View"
              mc:Ignorable="d" 
              d:DesignHeight="380" d:DesignWidth="300">
-    <StackPanel Orientation="Vertical">
-        <Label Content="Które?"/>
-        <TextBox Text="{Binding Which}" Height="30" TextAlignment="Center" Width="200" Margin="10" ></TextBox>
-        <Label Content="Ile?"/>
-        <TextBox Text="{Binding HowMany}" Height="30" TextAlignment="Center" Width="200" Margin="10"></TextBox>
+    <StackPanel Orientation="Vertical" Background="#FFDDCEB0">
+        <Label Content="Które?" Margin="30,40,10,0"/>
+        <TextBox Text="{Binding Which}" Margin="10,-30,0,0" ></TextBox>
+        <Label Content="Ile?" Margin="50,20,10,0"/>
+        <TextBox Text="{Binding HowMany}" Margin="10,-30,0,0"></TextBox>
     </StackPanel>
 </UserControl>
