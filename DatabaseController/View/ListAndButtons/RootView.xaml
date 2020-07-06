@@ -15,7 +15,7 @@
             <RowDefinition Height="0.3*"/>
         </Grid.RowDefinitions>
         <StackPanel Background="AliceBlue">
-            <TabControl Grid.Column="0" Grid.RowSpan="2">
+            <TabControl Grid.Column="0" Grid.RowSpan="2" >
                 <TabItem x:Name="burningTabItem" Header="Palenie" Width="113">
                     <DataGrid ItemsSource="{Binding DbModel.Burnings}" AutoGenerateColumns="True"/>
                 </TabItem>
@@ -45,6 +45,7 @@
             <Label Content="Komenda:"/>
             <TextBox Text="{Binding CommandString}" Width="500" Height="25" Margin="-200,0,0,0" />
             <Button Content="Execute" Command="{Binding Execute}" Width="130" Margin="500,-23,0,0"/>
+            <Label Content="{Binding OutputMessage}" Width="700"/>
         </StackPanel>
     </Grid>
 </UserControl>

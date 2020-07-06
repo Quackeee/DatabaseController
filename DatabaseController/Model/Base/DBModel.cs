@@ -41,5 +41,6 @@ namespace DatabaseController.DAL
 
             return objects;
         }
+        public abstract void ReloadListings();
     }
 }

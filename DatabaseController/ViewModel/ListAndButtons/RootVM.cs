@@ -12,9 +12,13 @@ namespace DatabaseController.ViewModel
 {
     class RootVM : ListAndButtonsVM
     {
-        public RootVM() => DbModel = new RootDBModel();
+
+        private string _outputMessage;
 
         public string CommandString { get; set; }
+        public string OutputMessage { get => _outputMessage; set { _outputMessage = value; OnPropertyChanged(nameof(OutputMessage)); } }
+
+        public RootVM() => DbModel = new RootDBModel();
 
         public RelayCommand Execute
         {
@@ -22,7 +26,8 @@ namespace DatabaseController.ViewModel
                 (
                     arg =>
                     {
-                        DBConnection.ExecuteCommand(CommandString);
+                        OutputMessage = DBConnection.TryExecuteCommand(CommandString);
+                        RefreshLisings();
                     }
                 );
         }

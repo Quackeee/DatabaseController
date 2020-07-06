@@ -15,6 +15,7 @@ namespace DatabaseController.CommandExecutors.ViewModel
         public void ExecuteCommand()
         {
             DBConnection.ExecuteCommand(_generateCommandString());
+            _mainWindow.SelectedLNBVM.RefreshLisings();
         }
         public abstract bool CanExecuteCommand();
     }

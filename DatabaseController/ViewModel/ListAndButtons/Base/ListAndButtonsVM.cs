@@ -16,5 +16,11 @@ namespace DatabaseController.ViewModel
             get => dbModel;
             set { dbModel = value; OnPropertyChanged(nameof(DbModel)); }
         }
+
+        public void RefreshLisings()
+        {
+            DbModel.ReloadListings();
+            OnPropertyChanged(nameof(DbModel));
+        }
     }
 }
