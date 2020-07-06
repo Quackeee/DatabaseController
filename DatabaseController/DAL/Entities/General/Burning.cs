@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DatabaseController.DAL.Entities
 {
-    class Burning
+    public class Burning : Entity
     {
         public uint IdR { get; private set; }
         public string Name { get; private set; }
@@ -16,7 +16,7 @@ namespace DatabaseController.DAL.Entities
         public string Treatment { get; private set; }
         public DateTime Date { get; private set; }
 
-        public Burning(MySqlDataReader dataReader)
+        public override void LoadFromReader(MySqlDataReader dataReader)
         {
             IdR = uint.Parse(dataReader["id_r"].ToString());
             Name = dataReader["nazwa_palarni"].ToString();

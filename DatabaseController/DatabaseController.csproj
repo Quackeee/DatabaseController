@@ -96,27 +96,27 @@
       <DependentUpon>SellCommandExecutorView.xaml</DependentUpon>
     </Compile>
     <Compile Include="DAL\DBConnection.cs" />
-    <Compile Include="DAL\Entities\Burning.cs" />
-    <Compile Include="DAL\Entities\Crop.cs" />
-    <Compile Include="DAL\Entities\Farm.cs" />
-    <Compile Include="DAL\Entities\Package.cs" />
-    <Compile Include="DAL\Entities\Roasted.cs" />
-    <Compile Include="DAL\Entities\RoastingRoom.cs" />
-    <Compile Include="DAL\Entities\Seed.cs" />
-    <Compile Include="Model\DBModel.cs" />
-    <Compile Include="DAL\Repositories\BurningRep.cs" />
-    <Compile Include="DAL\Repositories\CropRep.cs" />
-    <Compile Include="DAL\Repositories\FarmRep.cs" />
-    <Compile Include="DAL\Repositories\PackageRep.cs" />
-    <Compile Include="DAL\Repositories\RoastedRep.cs" />
-    <Compile Include="DAL\Repositories\RoastingRoomRep.cs" />
-    <Compile Include="DAL\Repositories\SeedRep.cs" />
+    <Compile Include="DAL\Entities\Entity.cs" />
+    <Compile Include="DAL\Entities\General\Burning.cs" />
+    <Compile Include="DAL\Entities\General\Crop.cs" />
+    <Compile Include="DAL\Entities\General\Farm.cs" />
+    <Compile Include="DAL\Entities\General\Package.cs" />
+    <Compile Include="DAL\Entities\General\Roasted.cs" />
+    <Compile Include="DAL\Entities\General\RoastingRoom.cs" />
+    <Compile Include="DAL\Entities\General\Seed.cs" />
+    <Compile Include="Model\Base\DBModel.cs" />
+    <Compile Include="Model\RoasterDBModel.cs" />
+    <Compile Include="Model\RootDBModel.cs" />
     <Compile Include="MVVMBase\ViewModelBase.cs" />
     <Compile Include="Properties\Resources.pl-PL.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.pl-PL.resx</DependentUpon>
     </Compile>
+    <Compile Include="Utils.cs" />
+    <Compile Include="ViewModel\ListAndButtons\Base\ListAndButtonsVM.cs" />
+    <Compile Include="ViewModel\ListAndButtons\RoasterVM.cs" />
+    <Compile Include="ViewModel\ListAndButtons\RootVM.cs" />
     <Compile Include="ViewModel\LogInVM.cs" />
     <Compile Include="ViewModel\MainWindowVM.cs" />
     <Compile Include="CommandExecutors\Base\CommandExecutorWindowVM.cs" />
@@ -128,6 +128,12 @@
     <Compile Include="View\DialogBoxes\MessageDialogBox.cs" />
     <Compile Include="View\DialogBoxes\OpenFileDialogBox.cs" />
     <Compile Include="View\DialogBoxes\SaveFileDialogBox.cs" />
+    <Compile Include="View\ListAndButtons\RoasterView.xaml.cs">
+      <DependentUpon>RoasterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ListAndButtons\RootView.xaml.cs">
+      <DependentUpon>RootView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\LogIn\ViewLogIn.xaml.cs">
       <DependentUpon>ViewLogIn.xaml</DependentUpon>
     </Compile>
@@ -159,6 +165,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\ListAndButtons\RoasterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ListAndButtons\RootView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\LogIn\ViewLogIn.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -196,6 +210,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="DAL\Entities\Roaster\" />
+    <Folder Include="DAL\Repositories\Roaster\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

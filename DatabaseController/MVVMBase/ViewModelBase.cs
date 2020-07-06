@@ -1,4 +1,5 @@
 ﻿using DatabaseController.CommandExecutors.ViewModel;
+using DatabaseController.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,6 +13,9 @@ namespace MVVMBase
 {
     class ViewModelBase : INotifyPropertyChanged
     {
+        protected static MainWindowVM _mainWindow;
+        public MainWindowVM MainWindow {get => _mainWindow;}
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         //metoda zgłaszająca zmiany we własnościach podanych jako argumenty

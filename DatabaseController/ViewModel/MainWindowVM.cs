@@ -24,12 +24,6 @@ namespace DatabaseController.ViewModel
 {
     class MainWindowVM : MVVMBase.ViewModelBase
     {
-        private DBModel dbModel;
-        public DBModel DbModel
-        {
-            get => dbModel;
-            set { dbModel = value;OnPropertyChanged(nameof(DbModel)); }
-        }
 
         private LogInVM loginPanel;
         public LogInVM LoginPanel
@@ -38,38 +32,18 @@ namespace DatabaseController.ViewModel
             set { loginPanel = value; OnPropertyChanged(nameof(LoginPanel)); }
         }
 
+        private ListAndButtonsVM selectedLNBVM;
+        public ListAndButtonsVM SelectedLNBVM
+        {
+            get => selectedLNBVM;
+            set { selectedLNBVM = value; OnPropertyChanged(nameof(selectedLNBVM)); }
+        }
+        
+
         public MainWindowVM()
         {
             loginPanel = new LogInVM();
-        }
-
-        public DisplayCECommand ShowSellCommandExecutor
-        {
-            get
-            {
-                return new DisplayCECommand(
-                    arg => new SellCommandExecutorVM()
-                    );
-            }
-        }
-
-        public DisplayCECommand ShowRoastCommandExecutor
-        {
-            get
-            {
-                return new DisplayCECommand(
-                    arg => new RoastCommandExecutorVM()
-                    );
-            }
-        }
-        public DisplayCECommand ShowPackCommandExecutor
-        {
-            get
-            {
-                return new DisplayCECommand(
-                    arg => new PackCommandExecutorVM()
-                    );
-            }
+            _mainWindow = this;
         }
 
         private ICommand loginCommand;
@@ -83,8 +57,18 @@ namespace DatabaseController.ViewModel
                         arg =>
                         {
                             DBConnection.LogIn(loginPanel.CurrentLogin, loginPanel.CurrentPassword);
-                            dbModel = new DBModel();
-                            OnPropertyChanged(nameof(dbModel));
+                            string role = DBConnection.GetUserRole();
+
+                            if (role == "root")
+                            {
+                                SelectedLNBVM = new RootVM();
+                                SelectedLNBVM.DbModel = new RootDBModel();
+                            }
+                            else if (role == "wlasciciel_palarni")
+                            {
+                                SelectedLNBVM = new RoasterVM();
+                                SelectedLNBVM.DbModel = new RoasterDBModel();
+                            }
                         },
                         arg =>
                         {
@@ -96,25 +80,5 @@ namespace DatabaseController.ViewModel
                 return loginCommand;
             }
         }
-
-        private ICommand testCommand;
-        public ICommand TestCommand
-        {
-            get
-            {
-                if(testCommand == null)
-                {
-                    testCommand = new RelayCommand(
-                        arg =>
-                        {
-                            foreach (var x in dbModel.Farms)
-                                Debug.WriteLine(x);
-                        },
-                        arg => { return true; });
-                }
-                return testCommand;
-            }
-        }
-
     }
 }
