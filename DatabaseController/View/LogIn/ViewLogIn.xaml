@@ -12,11 +12,11 @@
              x:Name="View">
     <Grid>
         <StackPanel>
-            <Label Content="{Binding Source={x:Static resx:Resources.LoginLabel}}" Margin="16,20,20,0"/>
+            <Label Content="{Binding Source={x:Static resx:Resources.LoginLabel}}" Margin="16,20,20,0" FontFamily="Charlesworth"/>
             <TextBox Text="{Binding Login, ElementName=View}" Margin="20,0,20,0"/>
 
-            <Label Content="{Binding Source={x:Static resx:Resources.PasswordLabel}}" Margin="16,10,20,0"/>
-            <TextBox Text="{Binding Password, ElementName=View}" Margin="20,0,20,0"/>
+            <Label Content="{Binding Source={x:Static resx:Resources.PasswordLabel}}" Margin="16,10,20,0" FontFamily="Charlesworth"/>
+            <TextBox Text="{Binding Password, ElementName=View}" Margin="20,0,20,0" FontFamily="Resources/password" />
 
         </StackPanel>
     </Grid>

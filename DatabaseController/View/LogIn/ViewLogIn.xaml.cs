@@ -44,5 +44,6 @@ namespace DatabaseController.View.LogIn
             get => (string)GetValue(PasswordProperty);
             set => SetValue(PasswordProperty, value);
         }
+
     }
 }
