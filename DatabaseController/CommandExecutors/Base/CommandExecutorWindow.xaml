@@ -6,8 +6,8 @@
             xmlns:local="clr-namespace:DatabaseController.CommandExecutors.View"
             xmlns:vm="clr-namespace:DatabaseController.CommandExecutors.ViewModel"
             xmlns:v="clr-namespace:DatabaseController.CommandExecutors.View"
-            mc:Ignorable="d">
-
+            mc:Ignorable="d"
+            d:DesignHeight="400" d:DesignWidth="350">
     <UserControl.Resources>
         <vm:CommandExecutorWindowVM x:Key="CEVM"/>
         
