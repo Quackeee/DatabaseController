@@ -65,7 +65,7 @@
         <Button Content="{Binding Source={x:Static resx:Resources.LoginButton}}" HorizontalAlignment="Center" VerticalAlignment="Bottom" 
                 Margin="44,0,42,73" Width="100" Height="30" Command="{Binding LoginCommand}"/>
 
-        <Button Content="Logout" HorizontalAlignment="Center" VerticalAlignment="Bottom" 
+        <Button Content="{Binding Source={x:Static resx:Resources.LogoutButton}}" HorizontalAlignment="Center" VerticalAlignment="Bottom" 
                 Margin="44,0,42,26" Width="100" Height="30" Command="{Binding LogoutCommand}"/>
 
         <Grid Grid.Column="1" Grid.RowSpan="2" Background="#FFDDCEB0">

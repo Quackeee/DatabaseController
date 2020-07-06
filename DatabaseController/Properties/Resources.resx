@@ -118,22 +118,19 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="command1" xml:space="preserve">
-    <value>Example 1</value>
+    <value>Roast</value>
   </data>
   <data name="command2" xml:space="preserve">
-    <value>Example 2</value>
+    <value>Pack</value>
   </data>
   <data name="command3" xml:space="preserve">
-    <value>Example 3</value>
+    <value>Sell</value>
   </data>
-  <data name="command4" xml:space="preserve">
-    <value>Example 4</value>
+  <data name="howmanyinpackageLabel" xml:space="preserve">
+    <value>How many in package?</value>
   </data>
-  <data name="command5" xml:space="preserve">
-    <value>Example 5</value>
-  </data>
-  <data name="command6" xml:space="preserve">
-    <value>Example 6</value>
+  <data name="howmanypackagesLabel" xml:space="preserve">
+    <value>How many packages?</value>
   </data>
   <data name="LoginButton" xml:space="preserve">
     <value>Log In</value>
@@ -141,11 +138,20 @@
   <data name="LoginLabel" xml:space="preserve">
     <value>Login</value>
   </data>
+  <data name="LogoutButton" xml:space="preserve">
+    <value>Log Out</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="password" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\password.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="PasswordLabel" xml:space="preserve">
     <value>Password</value>
+  </data>
+  <data name="priceLabel" xml:space="preserve">
+    <value>Price?</value>
+  </data>
+  <data name="whichoneLabel" xml:space="preserve">
+    <value>Which one?</value>
   </data>
 </root>

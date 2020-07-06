@@ -8,18 +8,18 @@ using System.Threading.Tasks;
 
 namespace DatabaseController.Model
 {
-    public class Farm : Entity
+    public class Farma : Entity
     {
-        public string Name { get; private set; }
-        public string Owner { get; private set; }
-        public string Country { get; private set; }
+        public string Nazwa { get; private set; }
+        public string Wlasciciel { get; private set; }
+        public string Kraj { get; private set; }
         public string Region { get; private set; }
 
         public override void LoadFromReader(MySqlDataReader dataReader)
         {
-            Name = dataReader["nazwa"].ToString();
-            Owner = dataReader["wlasciciel"].ToString();
-            Country = dataReader["kraj"].ToString();
+            Nazwa = dataReader["nazwa"].ToString();
+            Wlasciciel = dataReader["wlasciciel"].ToString();
+            Kraj = dataReader["kraj"].ToString();
             Region = dataReader["region"].ToString();
         }
     }

@@ -10,20 +10,20 @@ namespace DatabaseController.DAL.Entities.Roaster
     public class MyPackage : Entity
     {
         public uint ID { get; private set; }
-        public string Country { get; private set; }
+        public string Kraj { get; private set; }
         public string Region { get; private set; }
-        public double Weight { get; private set; }
-        public double Price { get; private set; }
-        public uint Count { get; private set; }
+        public double Waga { get; private set; }
+        public double Cena { get; private set; }
+        public uint Liczba { get; private set; }
 
         public override void LoadFromReader(MySqlDataReader dataReader)
         {
             ID = uint.Parse(dataReader["ID"].ToString());
-            Country = dataReader["kraj"].ToString();
+            Kraj = dataReader["kraj"].ToString();
             Region = dataReader["region"].ToString();
-            Weight = double.Parse(dataReader["waga"].ToString());
-            Price = double.Parse(dataReader["cena"].ToString());
-            Count = uint.Parse(dataReader["liczba"].ToString());
+            Waga = double.Parse(dataReader["waga"].ToString());
+            Cena = double.Parse(dataReader["cena"].ToString());
+            Liczba = uint.Parse(dataReader["liczba"].ToString());
         }
     }
 }

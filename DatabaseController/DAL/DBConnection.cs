@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -14,7 +15,7 @@ namespace DatabaseController.DAL
         public static string UserID { get; private set; }
         private static string Password { get; set; }
         
-        private MySqlConnectionStringBuilder stringBuilder = new MySqlConnectionStringBuilder();
+        public MySqlConnectionStringBuilder stringBuilder;
         
         private static DBConnection instance = null;
         public static DBConnection Instance
@@ -31,6 +32,9 @@ namespace DatabaseController.DAL
 
         private DBConnection()
         {
+            stringBuilder = new MySqlConnectionStringBuilder();
+
+
             stringBuilder.UserID = UserID;
             stringBuilder.Password = Password;
             stringBuilder.Server = "localhost";
@@ -42,6 +46,11 @@ namespace DatabaseController.DAL
         {
             UserID = userId;
             Password = password;
+        }
+
+        public static void LogOut()
+        {
+            instance = null;
         }
 
         public static string GetUserRole()

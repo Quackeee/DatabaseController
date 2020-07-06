@@ -126,14 +126,11 @@
   <data name="command3" xml:space="preserve">
     <value>Sprzedaj</value>
   </data>
-  <data name="command4" xml:space="preserve">
-    <value>Przyklad 4</value>
+  <data name="howmanyinpackageLabel" xml:space="preserve">
+    <value>Ile w paczce?</value>
   </data>
-  <data name="command5" xml:space="preserve">
-    <value>Przyklad 5</value>
-  </data>
-  <data name="command6" xml:space="preserve">
-    <value>Przyklad 6</value>
+  <data name="howmanypackagesLabel" xml:space="preserve">
+    <value>Ile paczek?</value>
   </data>
   <data name="LoginButton" xml:space="preserve">
     <value>Zaloguj</value>
@@ -141,7 +138,16 @@
   <data name="LoginLabel" xml:space="preserve">
     <value>Login</value>
   </data>
+  <data name="LogoutButton" xml:space="preserve">
+    <value>Wyloguj</value>
+  </data>
   <data name="PasswordLabel" xml:space="preserve">
     <value>Hasło</value>
+  </data>
+  <data name="priceLabel" xml:space="preserve">
+    <value>Cena?</value>
+  </data>
+  <data name="whichoneLabel" xml:space="preserve">
+    <value>Które?</value>
   </data>
 </root>

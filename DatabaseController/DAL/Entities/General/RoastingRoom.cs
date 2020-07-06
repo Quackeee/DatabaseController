@@ -11,15 +11,15 @@ namespace DatabaseController.Model
 {
     public class RoastingRoom : Entity
     {
-        public string Name { get; private set; }
-        public string Owner { get; private set; }
-        public double Budget { get; private set; }
+        public string Nazwa { get; private set; }
+        public string Wlasciciel { get; private set; }
+        public double Budzet { get; private set; }
 
         public override void LoadFromReader(MySqlDataReader dataReader)
         {
-            Name = dataReader["nazwa"].ToString();
-            Owner = dataReader["wlasciciel"].ToString();
-            Budget = double.Parse(dataReader["budzet"].ToString());
+            Nazwa = dataReader["nazwa"].ToString();
+            Wlasciciel = dataReader["wlasciciel"].ToString();
+            Budzet = double.Parse(dataReader["budzet"].ToString());
         }
     }
 }

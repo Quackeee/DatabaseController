@@ -13,33 +13,27 @@ namespace DatabaseController.Model
     public class Roasted : Entity
     {
         public uint IdR { get; private set; }
-        public double Weight { get; private set; }
-        public string Method { get; private set; }
-        public string Speciality { get; private set; }
-        public float Score { get; private set; }
-        public string Cons { get; private set; }
+        public double Waga { get; private set; }
+        public string Zalecana_metoda { get; private set; }
+        public string Jest_speciality { get; private set; }
+        public float Punktacja { get; private set; }
+        public string Wady { get; private set; }
         public string Body { get; private set; }
-        public string Acidity { get; private set; }
-        public string Sweetness { get; private set; }
+        public string Kwasowosc { get; private set; }
+        public string Slodycz { get; private set; }
         
-
-        public override string ToString()
-        {
-            return ($"{IdR}, {Weight}, {Speciality}, {Cons}");
-        }
-
         public override void LoadFromReader(MySqlDataReader dataReader)
         {
 
             IdR = uint.Parse(dataReader["id_r"].ToString());
-            Weight = double.Parse(dataReader["waga"].ToString());
-            Method = dataReader["zalecana_metoda"].ToString();
-            Speciality = dataReader["jest_speciality"].ToString();
-            Score = float.Parse(dataReader["punktacja"].ToString());
-            Cons = dataReader["wady"].ToString();
+            Waga = double.Parse(dataReader["waga"].ToString());
+            Zalecana_metoda = dataReader["zalecana_metoda"].ToString();
+            Jest_speciality = dataReader["jest_speciality"].ToString();
+            Punktacja = float.Parse(dataReader["punktacja"].ToString());
+            Wady = dataReader["wady"].ToString();
             Body = dataReader["body"].ToString();
-            Acidity = dataReader["kwasowosc"].ToString();
-            Sweetness = dataReader["slodycz"].ToString();
+            Kwasowosc = dataReader["kwasowosc"].ToString();
+            Slodycz = dataReader["slodycz"].ToString();
         }
     }
 }

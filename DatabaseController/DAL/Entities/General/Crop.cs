@@ -10,15 +10,15 @@ namespace DatabaseController.DAL.Entities
     public class Crop : Entity
     {
         public uint IdZ { get; private set; }
-        public string FarmName { get; private set; }
-        public DateTime Date { get; private set; }
+        public string Nazwa_farmy { get; private set; }
+        public DateTime Data { get; private set; }
 
         public override void LoadFromReader(MySqlDataReader dataReader)
         {
 
             IdZ = uint.Parse(dataReader["id_z"].ToString());
-            FarmName = dataReader["nazwa_farmy"].ToString();
-            Date = DateTime.Parse(dataReader["data"].ToString());
+            Nazwa_farmy = dataReader["nazwa_farmy"].ToString();
+            Data = DateTime.Parse(dataReader["data"].ToString());
         }
     }
 }

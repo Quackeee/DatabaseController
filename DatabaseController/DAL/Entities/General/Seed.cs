@@ -8,20 +8,20 @@ using System.Threading.Tasks;
 
 namespace DatabaseController.Model
 {
-    public class Seed : Entity
+    public class Ziarna : Entity
     {
         public uint IdZ { get; private set; }
-        public double Weight { get; private set; }
-        public double Price { get; private set; }
-        public int Height { get; private set; }
+        public double Waga { get; private set; }
+        public double Cena { get; private set; }
+        public int Wysokosc_upraw { get; private set; }
 
         public override void LoadFromReader(MySqlDataReader dataReader)
         {
 
             IdZ = uint.Parse(dataReader["id_z"].ToString());
-            Weight = double.Parse(dataReader["waga"].ToString());
-            Price = double.Parse(dataReader["cena"].ToString());
-            Height = int.Parse(dataReader["wysokosc_upraw"].ToString());
+            Waga = double.Parse(dataReader["waga"].ToString());
+            Cena = double.Parse(dataReader["cena"].ToString());
+            Wysokosc_upraw = int.Parse(dataReader["wysokosc_upraw"].ToString());
         }
     }
 }

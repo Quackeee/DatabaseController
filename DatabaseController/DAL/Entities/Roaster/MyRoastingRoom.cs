@@ -9,13 +9,13 @@ namespace DatabaseController.DAL.Entities.Roaster
 {
     public class MyRoastingRoom : Entity
     {
-        public string Name { get; private set; }
-        public double Budget { get; private set; }
+        public string Nazwa { get; private set; }
+        public double Budzet { get; private set; }
 
         public override void LoadFromReader(MySqlDataReader dataReader)
         {
-            Name = dataReader["nazwa"].ToString();
-            Budget = double.Parse(dataReader["budzet"].ToString());
+            Nazwa = dataReader["nazwa"].ToString();
+            Budzet = double.Parse(dataReader["budzet"].ToString());
         }
     }
 }
