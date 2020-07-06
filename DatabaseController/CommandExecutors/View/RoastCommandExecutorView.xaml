@@ -6,53 +6,50 @@
              xmlns:local="clr-namespace:DatabaseController.CommandExecutors.View"
              xmlns:resx="clr-namespace:DatabaseController.Properties"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="400" Background="#FFDDCEB0">
-
-    <Grid>
+             d:DesignHeight="500" d:DesignWidth="400">
+    <Grid Background="#FFDDCEB0">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-
-        <StackPanel Orientation="Vertical">
-            <Label Content="{Binding Source={x:Static resx:Resources.whichoneLabel}}"/>
-            <Label Content="{Binding Source={x:Static resx:Resources.howmanyLabel}}"/>
-            <Label Content="{Binding Source={x:Static resx:Resources.methodLabel}}"/>
-            <Label Content="{Binding Source={x:Static resx:Resources.levelLabel}}"/>
-            <Label Content="{Binding Source={x:Static resx:Resources.specialityLabel}}"/>
-            <Label Content="{Binding Source={x:Static resx:Resources.scoreLabel}}"/>
-            <Label Content="{Binding Source={x:Static resx:Resources.consLabel}}"/>
-            <Label Content="{Binding Source={x:Static resx:Resources.bodyLabel}}"/>
-            <Label Content="{Binding Source={x:Static resx:Resources.acidityLabel}}"/>
-            <Label Content="{Binding Source={x:Static resx:Resources.sweetnessLabel}}"/>
+        <StackPanel Grid.Column="0">
+            <Label Content="{Binding Source={x:Static resx:Resources.whichoneLabel}}" HorizontalAlignment="Right"/>
+            <Label Content="{Binding Source={x:Static resx:Resources.howmanyLabel}}" HorizontalAlignment="Right" />
+            <Label Content="{Binding Source={x:Static resx:Resources.methodLabel}}" HorizontalAlignment="Right"/>
+            <Label Content="{Binding Source={x:Static resx:Resources.levelLabel}}" HorizontalAlignment="Right"/>
+            <Label Content="{Binding Source={x:Static resx:Resources.scoreLabel}}" HorizontalAlignment="Right"/>
+            <Label Content="{Binding Source={x:Static resx:Resources.consLabel}}" HorizontalAlignment="Right"/>
+            <Label Content="{Binding Source={x:Static resx:Resources.bodyLabel}}" HorizontalAlignment="Right"/>
+            <Label Content="{Binding Source={x:Static resx:Resources.acidityLabel}}" HorizontalAlignment="Right"/>
+            <Label Content="{Binding Source={x:Static resx:Resources.sweetnessLabel}}" HorizontalAlignment="Right"/>
+            
         </StackPanel>
-
-        <StackPanel Orientation="Vertical" Grid.Column="1">
-            <TextBox Text="{Binding Which}" Margin="0, 12, 0, 0"/>
-            <TextBox Text="{Binding HowMuch}"  Margin="0, 12, 0, 0"/>
-            <ComboBox ItemsSource="{Binding Methods}" SelectedItem="{Binding Method}" Width="100" Height="30"  Margin="0, 12, 0, 0"/>
-            <ComboBox ItemsSource="{Binding Levels}" SelectedItem="{Binding Level}" Width="100" Height="30"  Margin="0, 12, 0, 0"/>
-            <CheckBox IsChecked="{Binding Speciality}" Margin="0, 23, 0, 12" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-            <TextBox Width="100" Text="{Binding Points}"  Margin="0, 12, 0, 0"/>
-            <TextBox Width="100" Text="{Binding Flaws}"  Margin="0, 12, 0, 0"/>
-            <TextBox Width="100" Text="{Binding Body}"  Margin="0, 12, 0, 0"/>
-            <TextBox Width="100" Text="{Binding Acidity}"  Margin="0, 12, 0, 0"/>
-            <TextBox Width="100" Text="{Binding Sweetness}"  Margin="0, 12, 0, 0"/>
+        <StackPanel Grid.Column="1">
+            <TextBox Text="{Binding Which}"  HorizontalAlignment="Left" Margin="0,10,0,0"/>
+            <TextBox Text="{Binding HowMuch}"  HorizontalAlignment="Left" Margin="0,10,0,0"/>
+            <ComboBox ItemsSource="{Binding Methods}" SelectedItem="{Binding Method}" Width="100" Height="30"  HorizontalAlignment="Left" Margin="0,10,0,0"/>
+            <ComboBox ItemsSource="{Binding Levels}" SelectedItem="{Binding Level}" Width="100" Height="30"  HorizontalAlignment="Left" Margin="0,13,0,0"/>
+            <TextBox Width="100" Text="{Binding Points}" HorizontalAlignment="Left" Margin="0,12,0,0"/>
+            <TextBox Width="100" Text="{Binding Flaws}" HorizontalAlignment="Left" Margin="0,10,0,0"/>
+            <TextBox Width="100" Text="{Binding Body}" HorizontalAlignment="Left" Margin="0,10,0,0"/>
+            <TextBox Width="100" Text="{Binding Acidity}" HorizontalAlignment="Left" Margin="0,13,0,0"/>
+            <TextBox Width="100" Text="{Binding Sweetness}"  HorizontalAlignment="Left" Margin="0,13,0,0"/>
         </StackPanel>
-
-        <StackPanel Orientation="Vertical" Grid.Column="2">
-            <Label Content="{Binding Source={x:Static resx:Resources.methodsLabel}}"/>
-            <StackPanel Orientation="Vertical">
+        <StackPanel Grid.Column="2">
+        <Label Content="{Binding Source={x:Static resx:Resources.methodsLabel}}" Grid.Column="1"/>
+            <StackPanel Grid.Column="1" Grid.ColumnSpan="2">
                 <CheckBox Content="Aeropress" IsChecked="{Binding ForAeropress}" />
                 <CheckBox Content="Drip" IsChecked="{Binding ForDrip}"/>
                 <CheckBox Content="Chemex" IsChecked="{Binding ForChemex}"/>
                 <CheckBox Content="Pressure Express" IsChecked="{Binding ForPressureExpress}"/>
                 <CheckBox Content="Drip Express" IsChecked="{Binding ForDripExpress}"/>
             </StackPanel>
+            <Label Content="Speciality" />
+            <CheckBox IsChecked="{Binding Speciality}" Margin="0,-20,0,0"/>
         </StackPanel>
+
     </Grid>
+    
+    
 </UserControl>
