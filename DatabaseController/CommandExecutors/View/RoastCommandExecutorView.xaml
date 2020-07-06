@@ -4,27 +4,30 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:DatabaseController.CommandExecutors.View"
+             xmlns:resx="clr-namespace:DatabaseController.Properties"
              mc:Ignorable="d" 
-             d:DesignHeight="400" d:DesignWidth="350">
+             d:DesignHeight="500" d:DesignWidth="400">
+    
+    
     <StackPanel Background="#FFDDCEB0">
         <StackPanel Orientation="Horizontal">
-            <Label Content="Które?"/>
+            <Label Content="{Binding Source={x:Static resx:Resources.whichoneLabel}}"/>
             <TextBox Text="{Binding Which}"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
-            <Label Content="Ile?" Margin="37,10,10,0" />
+            <Label Content="{Binding Source={x:Static resx:Resources.howmanyLabel}}" Margin="37,10,10,0" />
             <TextBox Text="{Binding HowMuch}"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
-            <Label Content="Metoda" Margin="10,10,10,0"/>
+            <Label Content="{Binding Source={x:Static resx:Resources.methodLabel}}" Margin="10,10,10,0"/>
             <ComboBox ItemsSource="{Binding Methods}" SelectedItem="{Binding Method}" Width="100" Height="30"/>
             
         </StackPanel>
         <StackPanel Orientation="Horizontal">
-            <Label Content="Stopień?" Margin="5,10,10,0"/>
+            <Label Content="{Binding Source={x:Static resx:Resources.levelLabel}}" Margin="5,10,10,0"/>
             <ComboBox ItemsSource="{Binding Levels}" SelectedItem="{Binding Level}" Width="100" Height="30"/>
         </StackPanel>
-        <Label Content="Metoda/y" Margin="220,-280,0,0"/>
+        <Label Content="{Binding Source={x:Static resx:Resources.methodsLabel}}" Margin="220,-280,0,0"/>
         <StackPanel Orientation="Vertical" Margin="200,-120,0,0">
             <CheckBox Content="Aeropress" IsChecked="{Binding ForAeropress}" />
             <CheckBox Content="Drip" IsChecked="{Binding ForDrip}"/>
@@ -35,23 +38,23 @@
         <Label Content="Speciality" Margin="220,-48,0,0"/>
         <CheckBox IsChecked="{Binding Speciality}" Margin="200,-30,0,0"/>
         <StackPanel Orientation="Horizontal">
-            <Label Content="Punktacja" Margin="5,10,3,0"/>
+            <Label Content="{Binding Source={x:Static resx:Resources.scoreLabel}}" Margin="5,10,3,0"/>
             <TextBox Width="100" Text="{Binding Points}"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
-            <Label Content="Wady" Margin="23,10,10,0"/>
+            <Label Content="{Binding Source={x:Static resx:Resources.consLabel}}" Margin="23,10,10,0"/>
             <TextBox Width="100" Text="{Binding Flaws}"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
-            <Label Content="Body" Margin="25,10,13,0"/>
+            <Label Content="{Binding Source={x:Static resx:Resources.bodyLabel}}" Margin="25,10,13,0"/>
             <TextBox Width="100" Text="{Binding Body}"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
-            <Label Content="Kwasowość" Margin="-2,10,0,0"/>
+            <Label Content="{Binding Source={x:Static resx:Resources.acidityLabel}}" Margin="-2,10,0,0"/>
             <TextBox Width="100" Text="{Binding Acidity}"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
-            <Label Content="Sweetness" Margin="5,10,0,0"/>
+            <Label Content="{Binding Source={x:Static resx:Resources.sweetnessLabel}}" Margin="5,10,0,0"/>
             <TextBox Width="100" Text="{Binding Sweetness}"/>
         </StackPanel>
             

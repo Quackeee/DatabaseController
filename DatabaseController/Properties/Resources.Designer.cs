@@ -61,6 +61,33 @@ namespace DatabaseController.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Acidity.
+        /// </summary>
+        public static string acidityLabel {
+            get {
+                return ResourceManager.GetString("acidityLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Body.
+        /// </summary>
+        public static string bodyLabel {
+            get {
+                return ResourceManager.GetString("bodyLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        public static string cancelButton {
+            get {
+                return ResourceManager.GetString("cancelButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Roast.
         /// </summary>
         public static string command1 {
@@ -88,7 +115,25 @@ namespace DatabaseController.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to How many in package?.
+        ///   Looks up a localized string similar to Cons.
+        /// </summary>
+        public static string consLabel {
+            get {
+                return ResourceManager.GetString("consLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Execute.
+        /// </summary>
+        public static string executeButton {
+            get {
+                return ResourceManager.GetString("executeButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to How many in the package.
         /// </summary>
         public static string howmanyinpackageLabel {
             get {
@@ -97,11 +142,29 @@ namespace DatabaseController.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to How many packages?.
+        ///   Looks up a localized string similar to How many.
+        /// </summary>
+        public static string howmanyLabel {
+            get {
+                return ResourceManager.GetString("howmanyLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to How many packages.
         /// </summary>
         public static string howmanypackagesLabel {
             get {
                 return ResourceManager.GetString("howmanypackagesLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Level.
+        /// </summary>
+        public static string levelLabel {
+            get {
+                return ResourceManager.GetString("levelLabel", resourceCulture);
             }
         }
         
@@ -133,6 +196,24 @@ namespace DatabaseController.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Method.
+        /// </summary>
+        public static string methodLabel {
+            get {
+                return ResourceManager.GetString("methodLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Methods.
+        /// </summary>
+        public static string methodsLabel {
+            get {
+                return ResourceManager.GetString("methodsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
         public static byte[] password {
@@ -152,7 +233,7 @@ namespace DatabaseController.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Price?.
+        ///   Looks up a localized string similar to Price.
         /// </summary>
         public static string priceLabel {
             get {
@@ -161,7 +242,34 @@ namespace DatabaseController.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Which one?.
+        ///   Looks up a localized string similar to Score.
+        /// </summary>
+        public static string scoreLabel {
+            get {
+                return ResourceManager.GetString("scoreLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Speciality.
+        /// </summary>
+        public static string specialityLabel {
+            get {
+                return ResourceManager.GetString("specialityLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sweetness.
+        /// </summary>
+        public static string sweetnessLabel {
+            get {
+                return ResourceManager.GetString("sweetnessLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Which one.
         /// </summary>
         public static string whichoneLabel {
             get {

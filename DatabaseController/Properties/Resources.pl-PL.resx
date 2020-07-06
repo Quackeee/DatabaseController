@@ -117,6 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="acidityLabel" xml:space="preserve">
+    <value>Kwasowosc</value>
+  </data>
+  <data name="bodyLabel" xml:space="preserve">
+    <value>Body</value>
+  </data>
+  <data name="cancelButton" xml:space="preserve">
+    <value>Anuluj</value>
+  </data>
   <data name="command1" xml:space="preserve">
     <value>Wypal</value>
   </data>
@@ -126,11 +135,23 @@
   <data name="command3" xml:space="preserve">
     <value>Sprzedaj</value>
   </data>
+  <data name="consLabel" xml:space="preserve">
+    <value>Wady</value>
+  </data>
+  <data name="executeButton" xml:space="preserve">
+    <value>Wykonaj</value>
+  </data>
   <data name="howmanyinpackageLabel" xml:space="preserve">
-    <value>Ile w paczce?</value>
+    <value>Ile w paczce</value>
+  </data>
+  <data name="howmanyLabel" xml:space="preserve">
+    <value>Ile?</value>
   </data>
   <data name="howmanypackagesLabel" xml:space="preserve">
-    <value>Ile paczek?</value>
+    <value>Ile paczek</value>
+  </data>
+  <data name="levelLabel" xml:space="preserve">
+    <value>Stopień</value>
   </data>
   <data name="LoginButton" xml:space="preserve">
     <value>Zaloguj</value>
@@ -141,11 +162,26 @@
   <data name="LogoutButton" xml:space="preserve">
     <value>Wyloguj</value>
   </data>
+  <data name="methodLabel" xml:space="preserve">
+    <value>Metoda</value>
+  </data>
+  <data name="methodsLabel" xml:space="preserve">
+    <value>Metoda/y</value>
+  </data>
   <data name="PasswordLabel" xml:space="preserve">
     <value>Hasło</value>
   </data>
   <data name="priceLabel" xml:space="preserve">
-    <value>Cena?</value>
+    <value>Cena</value>
+  </data>
+  <data name="scoreLabel" xml:space="preserve">
+    <value>Punktacja</value>
+  </data>
+  <data name="specialityLabel" xml:space="preserve">
+    <value>Speciality</value>
+  </data>
+  <data name="sweetnessLabel" xml:space="preserve">
+    <value>Słodycz</value>
   </data>
   <data name="whichoneLabel" xml:space="preserve">
     <value>Które?</value>

@@ -6,8 +6,10 @@
             xmlns:local="clr-namespace:DatabaseController.CommandExecutors.View"
             xmlns:vm="clr-namespace:DatabaseController.CommandExecutors.ViewModel"
             xmlns:v="clr-namespace:DatabaseController.CommandExecutors.View"
+            xmlns:resx="clr-namespace:DatabaseController.Properties"
+             
             mc:Ignorable="d"
-            d:DesignHeight="400" d:DesignWidth="350">
+            d:DesignHeight="600" d:DesignWidth="400">
     <UserControl.Resources>
         <vm:CommandExecutorWindowVM x:Key="CEVM"/>
         
@@ -39,7 +41,7 @@
         <Grid Grid.ColumnSpan="2">
             <ContentControl Content="{Binding UtilizedCommandForm}"/>
         </Grid>
-        <Button Grid.Row="1" Margin="10" Content="Cancel" IsCancel="True"/>
-        <Button Grid.Row="1" Grid.Column="1" Content="Execute" Command="{Binding Execute}" Margin="10"/>
+        <Button Grid.Row="1" Margin="10" Content="{Binding Source={x:Static resx:Resources.cancelButton}}" IsCancel="True"/>
+        <Button Grid.Row="1" Grid.Column="1" Content="{Binding Source={x:Static resx:Resources.executeButton}}" Command="{Binding Execute}" Margin="10"/>
     </Grid>
 </UserControl>
