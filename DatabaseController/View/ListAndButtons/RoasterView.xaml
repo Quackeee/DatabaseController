@@ -12,8 +12,14 @@
             <ColumnDefinition/>
             <ColumnDefinition Width="0.3*"/>
         </Grid.ColumnDefinitions>
-
+        
         <TabControl Grid.Column="0" Grid.RowSpan="2" Height="550" VerticalAlignment="Top">
+            <TabItem Header="{Binding Source={x:Static resx:Resources.seedLabel}}">
+                <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Visible">
+                    <DataGrid ItemsSource="{Binding DbModel.Seeds}" AutoGenerateColumns="True"/>
+                </ScrollViewer>
+            </TabItem>
+
             <TabItem Header="{Binding Source={x:Static resx:Resources.mySeedsLabel}}">
                 <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Visible">
                 <DataGrid ItemsSource="{Binding DbModel.MySeeds}" AutoGenerateColumns="True"/>
