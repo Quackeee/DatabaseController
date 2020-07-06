@@ -96,6 +96,7 @@
       <DependentUpon>SellCommandExecutorView.xaml</DependentUpon>
     </Compile>
     <Compile Include="DAL\DBConnection.cs" />
+    <Compile Include="DAL\Entities\Entity.cs" />
     <Compile Include="DAL\Entities\General\Burning.cs" />
     <Compile Include="DAL\Entities\General\Crop.cs" />
     <Compile Include="DAL\Entities\General\Farm.cs" />
@@ -104,13 +105,6 @@
     <Compile Include="DAL\Entities\General\RoastingRoom.cs" />
     <Compile Include="DAL\Entities\General\Seed.cs" />
     <Compile Include="Model\Base\DBModel.cs" />
-    <Compile Include="DAL\Repositories\General\BurningRep.cs" />
-    <Compile Include="DAL\Repositories\General\CropRep.cs" />
-    <Compile Include="DAL\Repositories\General\FarmRep.cs" />
-    <Compile Include="DAL\Repositories\General\PackageRep.cs" />
-    <Compile Include="DAL\Repositories\General\RoastedRep.cs" />
-    <Compile Include="DAL\Repositories\General\RoastingRoomRep.cs" />
-    <Compile Include="DAL\Repositories\General\SeedRep.cs" />
     <Compile Include="Model\RoasterDBModel.cs" />
     <Compile Include="Model\RootDBModel.cs" />
     <Compile Include="MVVMBase\ViewModelBase.cs" />
@@ -119,6 +113,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.pl-PL.resx</DependentUpon>
     </Compile>
+    <Compile Include="Utils.cs" />
     <Compile Include="ViewModel\ListAndButtons\Base\ListAndButtonsVM.cs" />
     <Compile Include="ViewModel\ListAndButtons\RoasterVM.cs" />
     <Compile Include="ViewModel\ListAndButtons\RootVM.cs" />

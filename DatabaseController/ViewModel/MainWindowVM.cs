@@ -43,7 +43,6 @@ namespace DatabaseController.ViewModel
         public MainWindowVM()
         {
             loginPanel = new LogInVM();
-            //SelectedLNBVM = new RootVM();
             _mainWindow = this;
         }
 
